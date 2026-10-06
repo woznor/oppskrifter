@@ -26,3 +26,9 @@ External image URLs are preserved; unavailable images have a fallback. Nutrition
 Open a recipe, choose servings and any optional protein additions, then add it to the shopping list. The list combines ingredients across dishes and is saved in the current browser. Removing a dish recalculates the quantities; purchased items can be checked off.
 
 Ingredient names match regardless of case and spacing, with explicit aliases for known equivalents such as medium potatoes and green pesto. Different product variants remain separate. Compatible units are converted (for example, tablespoons and decilitres to millilitres). When unit families differ, the supplied gram weights are summed without assuming a density. Add further verified aliases in `src/shopping.js` as needed.
+
+## Frontend password
+
+The entry screen uses the password in `src/access.js` (initially `kamillasmat`). Successful entry stores an access version in localStorage, not the entered password. Change the password and increment `accessVersion` to reset remembered logins after deployment. The logout button removes remembered access while preserving the shopping list. Recipe loading starts after the entry screen is unlocked.
+
+This is a frontend convenience gate. The public repository, deployed JavaScript, and `meals.json` remain accessible without authentication.

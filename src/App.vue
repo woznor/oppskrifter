@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { filterRecipes, ingredientQuantity } from './recipes'
 import ShoppingCart from './components/ShoppingCart.vue'
+defineEmits(['logout'])
 const cart = ref(null)
 const selectedAddons = ref([])
 const recipes = ref([])
@@ -68,7 +69,17 @@ onMounted(loadRecipes)
           ><span class="brand-name"
             >Kamillas<span class="brand-subtitle">oppskriftsbok</span></span
           ></a
-        ><ShoppingCart ref="cart" />
+        >
+        <div class="header-actions">
+          <ShoppingCart ref="cart" /><v-btn
+            icon="mdi-logout"
+            variant="text"
+            size="small"
+            aria-label="Logg ut"
+            title="Logg ut"
+            @click="$emit('logout')"
+          />
+        </div>
       </header>
       <main class="page">
         <section class="search-panel" aria-label="Søk og filtrer oppskrifter">
