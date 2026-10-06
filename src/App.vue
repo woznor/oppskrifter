@@ -62,26 +62,15 @@ onMounted(loadRecipes)
   <v-app
     ><v-main>
       <header class="site-header">
-        <a class="brand" href="./" aria-label="Matglede – forsiden"
+        <a class="brand" href="./" aria-label="Kamillas oppskrifter – forsiden"
           ><span class="brand-icon"
             ><v-icon icon="mdi-silverware-fork-knife" size="22" /></span
-          >matglede<span class="brand-dot">.</span></a
+          ><span class="brand-name"
+            >Kamillas<span class="brand-subtitle">oppskriftsbok</span></span
+          ></a
         ><ShoppingCart ref="cart" />
       </header>
       <main class="page">
-        <section class="hero">
-          <div class="eyebrow">GOD MAT. ENKLE VALG.</div>
-          <h1>Hva har du lyst på<br /><em>i dag?</em></h1>
-          <p>
-            Finn en ny favoritt, eller lag noe du allerede elsker.<br />Gode
-            oppskrifter til små og store hverdagsøyeblikk.
-          </p>
-          <div class="hero-decoration" aria-hidden="true">
-            <v-icon icon="mdi-pot-steam-outline" /><span
-              >Litt inspirasjon.<br />Masse matglede.</span
-            >
-          </div>
-        </section>
         <section class="search-panel" aria-label="Søk og filtrer oppskrifter">
           <v-text-field
             v-model="search"
@@ -132,9 +121,7 @@ onMounted(loadRecipes)
         >
           <div class="collection-heading">
             <h2>
-              {{
-                search || proteinOnly ? 'Dine treff' : 'Finn din neste favoritt'
-              }}
+              {{ search || proteinOnly ? 'Dine treff' : 'Oppskriftene mine' }}
             </h2>
             <span aria-live="polite">{{
               loading ? 'Laster …' : `${visibleRecipes.length} oppskrifter`
@@ -183,17 +170,13 @@ onMounted(loadRecipes)
                     size="48"
                   /><span>{{ recipe.name }}</span>
                 </div>
-                <span class="protein-badge"
-                  >{{ recipe.nutrients.protein }} g protein</span
-                >
               </div>
               <div class="card-content">
-                <span class="card-label">HVERDAGSFAVORITT</span>
                 <h3>{{ recipe.name }}</h3>
                 <div class="card-bottom">
                   <span
                     >{{ recipe.nutrients.calories }} kcal ·
-                    {{ recipe.ingredients.length }} ingredienser</span
+                    {{ recipe.nutrients.protein }} g protein</span
                   ><span class="card-arrow"
                     ><v-icon icon="mdi-arrow-top-right" size="20"
                   /></span>
@@ -202,7 +185,9 @@ onMounted(loadRecipes)
             </button>
           </div>
         </section>
-        <footer>Lag noe godt. Nyt det sammen.<span>matglede.</span></footer>
+        <footer>
+          <span>Kamillas oppskriftsbok</span>
+        </footer>
       </main>
       <v-dialog v-model="dialog" max-width="900" scrollable
         ><v-card v-if="selected" rounded="xl" class="detail-card"

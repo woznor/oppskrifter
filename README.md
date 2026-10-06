@@ -1,6 +1,6 @@
-﻿# Matglede
+# Kamillas oppskriftsbok
 
-A Norwegian recipe browser built with Vue 3, Vite, and Vuetify. Recipes are loaded from `public/meals.json`; see `public/meals-format.md` for the data format.
+A personal Norwegian recipe collection for Kamilla's family and friends, built with Vue 3, Vite, and Vuetify. Recipes are loaded from `public/meals.json`; see `public/meals-format.md` for the data format.
 
 ## Development
 

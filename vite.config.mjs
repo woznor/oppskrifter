@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/oppskrifter/' : '/',
   plugins: [
     Vue({
       template: { transformAssetUrls },

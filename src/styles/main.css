@@ -23,9 +23,9 @@ body {
   align-items: center;
   text-decoration: none;
   color: #263b32;
-  font-size: 29px;
-  font-weight: 800;
-  letter-spacing: -1.4px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .brand-icon {
   background: #294f3d;
@@ -37,78 +37,26 @@ body {
   place-items: center;
   margin-right: 12px;
 }
-.brand-dot {
-  color: #bc6a43;
+.brand-name {
+  line-height: 1;
 }
-.header-note,
-.eyebrow,
-.card-label {
+.brand-subtitle {
+  display: block;
+  margin-top: 5px;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-.header-note {
+  font-weight: 400;
+  letter-spacing: 1.2px;
   color: #778176;
 }
+
 .page {
   max-width: 1280px;
   margin: auto;
   padding: 0 48px;
 }
-.hero {
-  position: relative;
-  padding: 60px 0 38px;
-}
-.eyebrow {
-  color: #66785b;
-  margin-bottom: 18px;
-}
-h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(46px, 5.5vw, 72px);
-  line-height: 1.08;
-  font-weight: 400;
-  letter-spacing: -2.8px;
-}
-h1 em {
-  color: #70825a;
-  font-weight: 400;
-}
-.hero p {
-  color: #758073;
-  font-size: 15px;
-  line-height: 1.8;
-  margin-top: 22px;
-}
-.hero-decoration {
-  position: absolute;
-  right: 55px;
-  top: 70px;
-  width: 205px;
-  height: 205px;
-  border-radius: 50%;
-  border: 1px solid #d9decf;
-  background: #edf0e4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  transform: rotate(8deg);
-}
-.hero-decoration .v-icon {
-  font-size: 65px;
-  color: #73815d;
-}
-.hero-decoration span {
-  font-family: Georgia, serif;
-  font-style: italic;
-  text-align: center;
-  color: #6e7b61;
-  line-height: 1.5;
-}
 .search-panel {
-  margin-bottom: 42px;
+  margin-top: 24px;
+  margin-bottom: 26px;
 }
 .recipe-search {
   border: 1px solid #e0e2d8;
@@ -147,10 +95,8 @@ h1 em {
   margin-bottom: 23px;
 }
 .collection-heading h2 {
-  font-family: Georgia, serif;
-  font-size: 27px;
-  font-weight: 400;
-  letter-spacing: -0.6px;
+  font-size: 18px;
+  font-weight: 500;
 }
 .collection-heading > span {
   color: #7d867a;
@@ -197,17 +143,7 @@ button.recipe-card:focus-visible {
 .recipe-card:hover .card-image img {
   transform: scale(1.035);
 }
-.protein-badge {
-  position: absolute;
-  left: 15px;
-  bottom: 14px;
-  padding: 6px 11px;
-  background: #fffffff0;
-  color: #354a39;
-  border-radius: 7px;
-  font-size: 11px;
-  font-weight: 600;
-}
+
 .image-placeholder {
   height: 100%;
   display: flex;
@@ -226,18 +162,13 @@ button.recipe-card:focus-visible {
 .card-content {
   padding: 22px 21px 18px;
 }
-.card-label {
-  color: #8a9778;
-  font-size: 9px;
-  letter-spacing: 1.6px;
-}
+
 .card-content h3 {
-  font-family: Georgia, serif;
-  font-size: 21px;
-  line-height: 1.35;
-  font-weight: 400;
-  margin: 10px 0 18px;
-  min-height: 57px;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 500;
+  margin: 0 0 16px;
+  min-height: 49px;
 }
 .card-bottom {
   border-top: 1px solid #eef0e8;
@@ -311,11 +242,10 @@ footer span {
   margin-bottom: 24px;
 }
 .detail-body h2 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: 33px;
-  line-height: 1.2;
-  margin-bottom: 22px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 18px;
 }
 .nutrition-row {
   display: flex;
@@ -342,9 +272,8 @@ footer span {
   gap: 30px;
 }
 .detail-columns h3 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: 23px;
+  font-size: 18px;
+  font-weight: 500;
 }
 .ingredients-heading {
   display: flex;
@@ -416,35 +345,22 @@ footer span {
   .recipe-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .hero-decoration {
-    right: 10px;
-    width: 160px;
-    height: 160px;
-  }
 }
 @media (max-width: 600px) {
   .site-header {
     padding: 20px;
   }
-  .header-note {
-    display: none;
-  }
+
   .page {
     padding: 0 20px;
   }
-  .hero {
-    padding: 38px 0 28px;
+h1 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0;
   }
-  .hero-decoration {
-    display: none;
-  }
-  h1 {
-    letter-spacing: -1.5px;
-  }
-  .hero p {
-    font-size: 14px;
-  }
-  .filter-row {
+.filter-row {
     align-items: stretch;
     flex-direction: column;
     gap: 15px;
@@ -456,7 +372,8 @@ footer span {
     margin-bottom: 30px;
   }
   .collection-heading h2 {
-    font-size: 23px;
+    font-size: 18px;
+    font-weight: 500;
   }
   .recipe-grid {
     grid-template-columns: 1fr;
@@ -466,7 +383,11 @@ footer span {
     height: 230px;
   }
   .card-content h3 {
-    min-height: auto;
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 500;
+    margin: 0 0 16px;
+    min-height: 49px;
   }
   .detail-columns {
     grid-template-columns: 1fr;
@@ -475,7 +396,10 @@ footer span {
     padding: 20px !important;
   }
   .detail-body h2 {
-    font-size: 27px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 18px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -495,9 +419,8 @@ footer span {
 }
 .cart-subheading {
   margin: 24px 0 10px;
-  font-family: Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
 }
 .cart-recipes,
 .shopping-list {
@@ -562,7 +485,7 @@ footer span {
 }
 @media (max-width: 600px) {
   .site-header .brand {
-    font-size: 24px;
+    font-size: 20px;
   }
   .site-header .brand-icon {
     margin-right: 7px;
