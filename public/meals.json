@@ -1,0 +1,2412 @@
+[
+    {
+        "id": 1,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": false,
+        "icon": "",
+        "meal_type": [
+            0,
+            1,
+            3
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-bread-slice-outline",
+        "name": "Brød med hvitost og kjøttpålegg pluss proteinkilde",
+        "procedure": "Kan om ønskelig varmes i ovn, mikro eller toasthjern",
+        "image": "https://media.wpd.digital/brodogkorn/uploads/2015/12/10291_50-e1452861826924-920x535.jpg?ver=1562239926",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "magert kjøttpålegg",
+                "type": "skiver",
+                "grams": 44,
+                "number": 4
+            },
+            {
+                "text": "hvitost",
+                "type": "skiver",
+                "grams": 26,
+                "number": 2
+            },
+            {
+                "text": "grovt brød",
+                "type": "skiver",
+                "grams": 80,
+                "number": 2
+            }
+        ],
+        "protein_addons": [
+            {
+                "text": "Skyr",
+                "type": "boks",
+                "grams": 160,
+                "number": 1
+            },
+            {
+                "text": "mager cottage cheese",
+                "type": "ss",
+                "grams": 128,
+                "number": 8
+            },
+            {
+                "text": "proteinpulver",
+                "type": "måleskje",
+                "grams": 30,
+                "number": 1
+            }
+        ],
+        "nutrients": {
+            "calories": 400,
+            "protein": 41,
+            "carbs": 38,
+            "fat": 8,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 2,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pizza",
+        "name": "Tortilla-pizza",
+        "procedure": "Smør pesto utover lefsen, ha på raspet ost og topp med spekeskine, mozarella, tomater og ønsket krydder. Stek så i ovnen på 200 grader til osten er smeltet og lefsen er blitt gyllen. Ha så på litt ruccola og andre grønnsaker om ønskelig. Server med en stor digg salat.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSntFDa3HNw38Ak5-uA_8TDLOu4CmMK8pkqA&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "grønn pesto",
+                "type": "ss",
+                "grams": 9,
+                "number": 0.5
+            },
+            {
+                "text": "spekeskinke, Grilstad, lev litt lettere",
+                "type": "skiver",
+                "grams": 48,
+                "number": 6
+            },
+            {
+                "text": "hvitost, lett",
+                "type": "skiver",
+                "grams": 52,
+                "number": 4
+            },
+            {
+                "text": "Mozzarella",
+                "type": "",
+                "grams": 30,
+                "number": 0
+            },
+            {
+                "text": "tomat",
+                "type": "stk",
+                "grams": 52,
+                "number": 0.5
+            },
+            {
+                "text": "ruccolasalat",
+                "type": "dl",
+                "grams": 11,
+                "number": 1
+            },
+            {
+                "text": "stor tortilla, fullkorn",
+                "type": "stk",
+                "grams": 60,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 540,
+            "protein": 30,
+            "carbs": 48,
+            "fat": 25,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 3,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": false,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "",
+        "name": "Søtpotetnachos",
+        "procedure": "1. Kutt opp søtpotet i tynne skiver og fordel utover et bakepapapir. <br/><br/> 2. Stek i ovnen på 200 grader i ca 15-20 min. Mens potetene står i ovnen steker du karbonadedeig og kutter opp grønnsaker. <br/><br/> 3. Ta søtpotet ut av ovnen, legg over kjøtt og grønnsaker. Topp med revet ost og sett inn i ovnen igjen i ca 10 min. <br/><br/> 4. Server retten med friske salatblader, mais mager kesam og salsa.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY3mhB1skiH2uJUnJnIvon0ewb0DpORVXILw&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Karbonadedeig",
+                "type": "g",
+                "grams": 140,
+                "number": 140
+            },
+            {
+                "text": "søtpotet",
+                "type": "stk",
+                "grams": 180,
+                "number": 1
+            },
+            {
+                "text": "løk",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.25
+            },
+            {
+                "text": "paprika, rød",
+                "type": "stk",
+                "grams": 85,
+                "number": 0.5
+            },
+            {
+                "text": "chili, rød",
+                "type": "stk",
+                "grams": 3,
+                "number": 0.25
+            },
+            {
+                "text": "hvitost",
+                "type": "skiver",
+                "grams": 39,
+                "number": 3
+            },
+            {
+                "text": "salsasaus, Old El Paso",
+                "type": "ss",
+                "grams": 34,
+                "number": 2
+            },
+            {
+                "text": "mager kesam",
+                "type": "ss",
+                "grams": 18,
+                "number": 1
+            },
+            {
+                "text": "minimais, hermetisk",
+                "type": "boks",
+                "grams": 70,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 40,
+            "carbs": 48,
+            "fat": 19,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 4,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": false,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pasta",
+        "name": "Pasta Carbonara",
+        "procedure": "1. Stek kyllingen i panne og kok pasta. <br/><br/> 2. Stek så spekeskinken og legg den til siden. <br/><br/> 3. Fres sopp, løk og sjalottløk i en panne før du så tilsetter lett matfløte og kyllingfond eller buljong. La det småkoke og smak til med krydder. <br/><br/> 4. Ha så kyllingen og den kokte pastaen i sausen. <br/><br/> 5. Ha så i eggeplommen og smak til med salt og pepper. <br/><br/> 6. Server i en skål, topp med spekeskinke og ruccola.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiZuXvUPIs4I6w64PeRs1exfx0KO5xStab4w&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "kyllingfilet",
+                "type": "g",
+                "grams": 115,
+                "number": 115
+            },
+            {
+                "text": "pasta",
+                "type": "dl",
+                "grams": 60,
+                "number": 2
+            },
+            {
+                "text": "spekeskinke, Grilstad, lev litt lettere",
+                "type": "skiver",
+                "grams": 32,
+                "number": 4
+            },
+            {
+                "text": "lett matfløte",
+                "type": "ss",
+                "grams": 66,
+                "number": 6
+            },
+            {
+                "text": "hvitløk",
+                "type": "fedd",
+                "grams": 1,
+                "number": 1
+            },
+            {
+                "text": "steinsopp",
+                "type": "stk",
+                "grams": 1,
+                "number": 1
+            },
+            {
+                "text": "eggeplomme",
+                "type": "stk",
+                "grams": 18,
+                "number": 1
+            },
+            {
+                "text": "kyllingbuljong",
+                "type": "terning",
+                "grams": 10,
+                "number": 1
+            },
+            {
+                "text": "sjalottløk",
+                "type": "stk",
+                "grams": 1,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 45,
+            "carbs": 48,
+            "fat": 16,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 5,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": false,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-drumstick-outline",
+        "name": "Kyllingsnadder",
+        "procedure": "1. Kutt opp poteter i strimler og stek de en ildfast form i ca 10-15 min. <br/><br/> 2. Mens potetene steke si ovnen steker du sopp, løk og kylling i en stekepanne og krydre med salt, pepper, og paprikapulver. <br/><br/> 3. Ta så søtpotetene it av ovnen og bland sammen med kylling, løk og sopp. Legg så over ost og gratiner i ovnen i 10-15 min. <br/><br/> 4. Lag så bernaise etter henvisning på posen. <br/><br/> 5. Server med bernaise, salat og brokkoli",
+        "image": "https://res.cloudinary.com/norgesgruppen/image/upload/c_fill,f_jpg,q_auto:eco,w_1600/exx8kxakavtl8nop6vtd.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "kyllingfilet",
+                "type": "g",
+                "grams": 90,
+                "number": 90
+            },
+            {
+                "text": "middels store poteter",
+                "type": "stk",
+                "grams": 325,
+                "number": 5
+            },
+            {
+                "text": "sjampinjong, fersk",
+                "type": "stk",
+                "grams": 110,
+                "number": 6
+            },
+            {
+                "text": "løk",
+                "type": "stk",
+                "grams": 28,
+                "number": 0.25
+            },
+            {
+                "text": "hvitost",
+                "type": "skiver",
+                "grams": 39,
+                "number": 3
+            },
+            {
+                "text": "isbergsalat",
+                "type": "blader",
+                "grams": 160,
+                "number": 4
+            },
+            {
+                "text": "agurk",
+                "type": "dl",
+                "grams": 55,
+                "number": 1
+            },
+            {
+                "text": "bernaisesaus pulver, lett, Toro",
+                "type": "pose",
+                "grams": 12,
+                "number": 0.5
+            },
+            {
+                "text": "lettmelk",
+                "type": "dl",
+                "grams": 125,
+                "number": 1.25
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 48,
+            "carbs": 48,
+            "fat": 14,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 6,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": false,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-drumstick-outline",
+        "name": "Ovnsbakt kyllingfilet med ris og bernaise",
+        "procedure": "1. For en saftig kyliing legger du kyllinfileten hel på bakepapir og krudre med salt og kyllingkrydder. <br/><br/> 2. stek midt i ovnen på 200 grader i ca 20-25 min. <br/><br/> 3. Skrell og del opp rotgrønnsaker i en ildfast form eller langpanne. Dryss over litt sukringold, salt og pepper. Stek dem så i ovnen i ca 20 min. <br/><br/> 4. Kok opp risen og lag bernaise etter annvisning på pakken. <br/><br/> 5. Server kulling, ris og grønnsaker og bernaise",
+        "image": "https://cdn.blogg.no/wp-content/uploads/sites/170/2018/11/12083119/iphone_1996294_1491392640141-1996294-1-1491392640144.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "kyllingfilet",
+                "type": "g",
+                "grams": 140,
+                "number": 140
+            },
+            {
+                "text": "ris",
+                "type": "dl",
+                "grams": 60,
+                "number": 0.75
+            },
+            {
+                "text": "rødbete",
+                "type": "stk",
+                "grams": 30,
+                "number": 0.25
+            },
+            {
+                "text": "pastinakk",
+                "type": "stk",
+                "grams": 60,
+                "number": 0.5
+            },
+            {
+                "text": "gulrot",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.5
+            },
+            {
+                "text": "sjalottløk",
+                "type": "stk",
+                "grams": 28,
+                "number": 0.5
+            },
+            {
+                "text": "bernaisesaus pulver, lett, Toro",
+                "type": "pose",
+                "grams": 8,
+                "number": 0.2
+            },
+            {
+                "text": "lettmelk",
+                "type": "dl",
+                "grams": 200,
+                "number": 2
+            },
+            {
+                "text": "sukrin hold",
+                "type": "ss",
+                "grams": 200,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 72,
+            "carbs": 48,
+            "fat": 6,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 7,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": false,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-steak",
+        "name": "Biff med bernaise og pommes frites",
+        "procedure": "1. Tørk kjøttstykket godt og krydre med salt og pepper. <br/><br/> 2. Stek biffen på høy varme i ca 2 minutter til kjøttsaft begynner å piple ut på overflaten. <br/><br/> 3. Snu buggen og stek videre i ca 2 minutter til. <br/><br/> 4. Skru av varmen og dekk til biffen. <br/><br/> 5. La biffen hvile i noen minutter. <br/><br/> 6. Skjær potet i strimler og stek i airfryer. <br/><br/> 7. Fres mais i noen minutter på panna. <br/><br/> 8. Lag bernaise etter annvinisning på pakken. <br/><br/> 9. Server med kokt eller dampet brokkoli.",
+        "image": "https://res.cloudinary.com/norgesgruppen/image/upload/c_fill,f_jpg,h_453,q_auto:eco,w_805/o9hhpyogonbzmf7ie7ek.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Storfe",
+                "type": "g",
+                "grams": 150,
+                "number": 150
+            },
+            {
+                "text": "mais",
+                "type": "dl",
+                "grams": 70,
+                "number": 1
+            },
+            {
+                "text": "middels store poteter",
+                "type": "stk",
+                "grams": 325,
+                "number": 5
+            },
+            {
+                "text": "bernaisesaus pulver, lett, Toro",
+                "type": "pose",
+                "grams": 6,
+                "number": 0.25
+            },
+            {
+                "text": "lettmelk",
+                "type": "dl",
+                "grams": 75,
+                "number": 0.75
+            },
+            {
+                "text": "brokkoli",
+                "type": "buketter",
+                "grams": 150,
+                "number": 6
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 52,
+            "carbs": 48,
+            "fat": 11,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 8,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": false,
+        "must_be_heated": false,
+        "icon": "",
+        "meal_type": [
+            0,
+            1,
+            3
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-bread-slice-outline",
+        "name": "Knekkebrød med hvitost og salami, pluss proteinkilde",
+        "procedure": "",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh67B_PXcbArCnMmSHuCJogWm05BYSRuDO-6XtKj9QMLUsyWkURlAMJcfUr-C3Cxn0ozClylLaKsX2JRDZ_ZT_Jh1ZO9nze8YoynuLXy1V7FTboo4lieiXjHgezTUUMHp51WulfqCrTcl2_/s1600/IMG_5357.JPG",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Wasa sport knekkebrød",
+                "type": "stk",
+                "grams": 45,
+                "number": 3
+            },
+            {
+                "text": "salami, Gilde go og mager",
+                "type": "skiver",
+                "grams": 39,
+                "number": 3
+            },
+            {
+                "text": "hvitost",
+                "type": "skiver",
+                "grams": 39,
+                "number": 3
+            }
+        ],
+        "protein_addons": [
+            {
+                "text": "Skyr",
+                "type": "boks",
+                "grams": 160,
+                "number": 1
+            },
+            {
+                "text": "proteinpulver",
+                "type": "måleskje",
+                "grams": 25,
+                "number": 5
+            },
+            {
+                "text": "mager cottage cheese",
+                "type": "ss",
+                "grams": 120,
+                "number": 7.5
+            }
+        ],
+        "nutrients": {
+            "calories": 450,
+            "protein": 32,
+            "carbs": 45,
+            "fat": 16,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 9,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": false,
+        "icon": "",
+        "meal_type": [
+            0,
+            1,
+            3
+        ],
+        "meal_category": [],
+        "meal_category_icon": "",
+        "name": "Lomper med skinke og ost + skyr",
+        "procedure": "Kan om ønskelig varmes i ovn, mikro eller toasthjern",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDjTLrIlZR1MHXF6rduq4l1T4x7774kR6MA&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "speltlompe",
+                "type": "stk",
+                "grams": 120,
+                "number": 4
+            },
+            {
+                "text": "hvitost, lett",
+                "type": "skiver",
+                "grams": 52,
+                "number": 4
+            },
+            {
+                "text": "Skyr",
+                "type": "boks",
+                "grams": 160,
+                "number": 1
+            },
+            {
+                "text": "magert kjøttpålegg",
+                "type": "skiver",
+                "grams": 44,
+                "number": 4
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 450,
+            "protein": 47,
+            "carbs": 45,
+            "fat": 10,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 10,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": false,
+        "icon": "",
+        "meal_type": [
+            0,
+            1,
+            3
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-bread-slice-outline",
+        "name": "Brød med hvitost og kjøttpålegg",
+        "procedure": "Kan om ønskelig varmes i ovn, mikro eller toasthjern. Ta gjerne på ketchup og/eller sennep hvis du vil. Pynt gjerne med grønt hvis du vil",
+        "image": "https://res.cloudinary.com/norgesgruppen/image/upload/f_auto,q_75/cepwscxjqkamqlnretef",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "hvitost, lett",
+                "type": "skiver",
+                "grams": 65,
+                "number": 5
+            },
+            {
+                "text": "magert kjøttpålegg",
+                "type": "skiver",
+                "grams": 88,
+                "number": 8
+            },
+            {
+                "text": "grovt brød",
+                "type": "skiver",
+                "grams": 80,
+                "number": 2
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 450,
+            "protein": 35,
+            "carbs": 45,
+            "fat": 15,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 11,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            1
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pasta",
+        "name": "Pasta Bolognese",
+        "procedure": "1. Stek karbonadedeig i en panne og sett til side  når ferdig. <br/><br/> 2. Stek løk og gulrøtter sammen og tilsett hakkede tomater, tomatpurre, fersk basilikum og cottage cheese. Mikse dette sammen i en stavmikser for en mykere konsistens. <br/><br/> 3. Hell så sausen over kjøttdeigen og stek sammen. Tilsett krydder og ketchup hvis du vil",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqrZVPayvcgld16Cr-EzdWnsnFbnZOfSa1hw&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Karbonadedeig",
+                "type": "g",
+                "grams": 130,
+                "number": 130
+            },
+            {
+                "text": "løk",
+                "type": "stk",
+                "grams": 80,
+                "number": 0.5
+            },
+            {
+                "text": "gulrot",
+                "type": "stk",
+                "grams": 80,
+                "number": 1
+            },
+            {
+                "text": "hakket tomat, hermetisk",
+                "type": "dl",
+                "grams": 100,
+                "number": 1
+            },
+            {
+                "text": "tomatpuré",
+                "type": "ss",
+                "grams": 18,
+                "number": 1
+            },
+            {
+                "text": "mager cottage cheese",
+                "type": "ss",
+                "grams": 80,
+                "number": 5
+            },
+            {
+                "text": "basilikum",
+                "type": "neve",
+                "grams": 10,
+                "number": 1
+            },
+            {
+                "text": "pasta, fullkorn",
+                "type": "dl",
+                "grams": 60,
+                "number": 2
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 55,
+            "carbs": 48,
+            "fat": 10,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 12,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": false,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            0,
+            1,
+            3
+        ],
+        "meal_category": [],
+        "meal_category_icon": "",
+        "name": "Havregrøt med kanel, gulrot og vaniljekesam",
+        "procedure": "1. kok opp havregryn eller havremel på vann og tilsett gjerne litt kardemomme. <br/><br/> 2. Rør inn proteinpulver og raspet gulrot. Topp med mager vaniljekesam, kanel og sukrin gold.",
+        "image": "https://cdn-yams.godt.no/api/v1/godt-recipe/images/36/3667a47d-a02d-4e64-a54b-7106e61da915?rule=w4000_auto",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "havregryn",
+                "type": "dl",
+                "grams": 60,
+                "number": 1.5
+            },
+            {
+                "text": "proteinpulver",
+                "type": "måleskje",
+                "grams": 30,
+                "number": 1
+            },
+            {
+                "text": "gulrot",
+                "type": "stk",
+                "grams": 80,
+                "number": 1
+            },
+            {
+                "text": "vaniljekesam",
+                "type": "ss",
+                "grams": 126,
+                "number": 7
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 450,
+            "protein": 53,
+            "carbs": 45,
+            "fat": 6,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 13,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-drumstick-outline",
+        "name": "Hvit kyllingcurry med nudler",
+        "procedure": "Stek kyllingfilet med salt, pepper og litt soyasaus. Tilsett 1 ts red curry paste eller krydder, 1 ts revet ingefær (gjerne med skall), 1 ts limesaft, 1 ts stivelse (fersk eller paste), 1 ts finhakket hvitløk, tørket eller fersk sopp (kan sløyfes). Når dette er stekt inn i kyllingen, tilsett kokosmelk og vann til passe konsistens. Ha deretter i nudler og la småkoke til nudlene er bløte. Topp med revet gulrot og koriander.",
+        "image": "https://www.prior.no/assets/images/_1600x900_crop_center-center_none/Kyllingsuppe.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Kyllingfilet",
+                "type": "g",
+                "grams": 180,
+                "number": 180
+            },
+            {
+                "text": "Kokosmelk",
+                "type": "dl",
+                "grams": 110,
+                "number": 1
+            },
+            {
+                "text": "Hvitløk, finhakket",
+                "type": "ts",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Karripasta, curry paste",
+                "type": "ts",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Nudler, med egg",
+                "type": "g",
+                "grams": 20,
+                "number": 20
+            },
+            {
+                "text": "Ingefærrot",
+                "type": "ts",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Gulrot",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 21,
+            "carbs": 48,
+            "fat": 29,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 14,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-steak",
+        "name": "Biff Bourguignon med rotgrønnsaker",
+        "procedure": "Kutt poteter, gulrøtter, sopp, kålrot og kjøtt i terninger. Finhakk løk og hvitløk. Ha litt olje i en jerngryte (om du har) og fres løk og hvitløk myk. Ha hvetemel over kjøttet, og ha kjøttet i gryta. Brun kjøttet og ha over tomatpurre. Hell over kraft og la det småkoke en times tid. Ha i grønnsakene og la gryta koke videre i ca. 20 min. Smak til med salt og pepper. Om ænskelig kan du bruke litt frikalorier på brød ved servering.",
+        "image": "https://i1.vrs.gd/gladkokken/uploads/images/Bouef-B-9.jpg?width=1200&height=600&format=jpg&quality=80&crop=6048%2C3024%2C0%2C500",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Storfe, høyrygg",
+                "type": "g",
+                "grams": 170,
+                "number": 170
+            },
+            {
+                "text": "Løk",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.25
+            },
+            {
+                "text": "Gulrot",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.5
+            },
+            {
+                "text": "Middels store poteter",
+                "type": "stk",
+                "grams": 130,
+                "number": 2
+            },
+            {
+                "text": "Hvitløk",
+                "type": "fedd",
+                "grams": 1,
+                "number": 0.5
+            },
+            {
+                "text": "Laurbærblad, tørket",
+                "type": "stk",
+                "grams": 5,
+                "number": 0.5
+            },
+            {
+                "text": "Sjampinjong, rå",
+                "type": "stk",
+                "grams": 36,
+                "number": 2
+            },
+            {
+                "text": "Kålrot, kålrabi",
+                "type": "stk",
+                "grams": 100,
+                "number": 0.24
+            },
+            {
+                "text": "Oksekraft, Maggi",
+                "type": "dl",
+                "grams": 50,
+                "number": 0.5
+            },
+            {
+                "text": "Timian",
+                "type": "litt",
+                "grams": 10,
+                "number": 1
+            },
+            {
+                "text": "Hvetemel",
+                "type": "ss",
+                "grams": 3,
+                "number": 0.25
+            },
+            {
+                "text": "Tomatpuré",
+                "type": "ts",
+                "grams": 5,
+                "number": 0.5
+            },
+            {
+                "text": "Salt",
+                "type": "ønsket mengde",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Pepper, sort",
+                "type": "ønsket mengde",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Olivenolje",
+                "type": "ts",
+                "grams": 3,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 34,
+            "carbs": 48,
+            "fat": 20,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 15,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-steak",
+        "name": "Biff stroganoff",
+        "procedure": "Sett risen på kok. Stek sopp og løk i en stekepanne og legg det til side. Skjær opp kjøttet i strimler og stek det. Når biffstrimlene har nådd ønsket stekegrad tilsetter du soppen og løken igjen, sammen med tomatpurre og creme fraiche. Smak til med salt og pepper. Server med ris og eventuelt en salat.",
+        "image": "https://i1.vrs.gd/gladkokken/uploads/images/DSC_0378.jpg?width=1800&height=1000&format=jpg&quality=80&crop=6000%2C3334%2C0%2C333",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Storfe, indrefilet",
+                "type": "g",
+                "grams": 150,
+                "number": 150
+            },
+            {
+                "text": "Ris",
+                "type": "dl",
+                "grams": 60,
+                "number": 0.75
+            },
+            {
+                "text": "Løk",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.25
+            },
+            {
+                "text": "Sjampinjong, rå",
+                "type": "stk",
+                "grams": 40,
+                "number": 2
+            },
+            {
+                "text": "Tomatpuré",
+                "type": "ss",
+                "grams": 36,
+                "number": 2
+            },
+            {
+                "text": "Lett creme fraiche 10%",
+                "type": "ss",
+                "grams": 72,
+                "number": 4
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 55,
+            "carbs": 48,
+            "fat": 15,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 16,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-steak",
+        "name": "Biff på kinesisk vis",
+        "procedure": "Sett risen på kok og skjær opp storfekjøttet i strimler. Stek grønnsakene møre i en stekepanne og legg de til sides mens du steker biffstrimlene. Tilsett deretter grønnsakene igjen, sammen med kikkoman og oystersaus. Krydre med peppermix og server sammen med ris.",
+        "image": "https://www.matoppskrift.no/images/oppskrifter_big/10507.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Storfe, indrefilet",
+                "type": "g",
+                "grams": 170,
+                "number": 170
+            },
+            {
+                "text": "Ris",
+                "type": "dl",
+                "grams": 64,
+                "number": 0.8
+            },
+            {
+                "text": "Wokblanding, klassisk",
+                "type": "pose",
+                "grams": 125,
+                "number": 0.25
+            },
+            {
+                "text": "Soyasaus",
+                "type": "ss",
+                "grams": 26,
+                "number": 2
+            },
+            {
+                "text": "Oyster sauce, Blue Dragon",
+                "type": "ss",
+                "grams": 26,
+                "number": 2
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 65,
+            "carbs": 48,
+            "fat": 9,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 17,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pasta",
+        "name": "Grytelasagne",
+        "procedure": "Stek karbonadedeig, sjalottløk og hvitløk i en liten gryte. Krydre med grillkrydder, oregano og et lite dryss cayennepepper (kan sløyfes) og tilsett tomatpurre. La surre noen minutter før du tilsetter vann, suppebuljong, passata og cherrytomat. Fordel philadelphia i små klatter og brekk lasagneplater i 3 deler og fordel dem oppi gryten. La koke under lokk i ca. 15 min og strø over revet ost. La stå under lokk i 5 min og server sammen med salat.",
+        "image": "https://i0.wp.com/detgladekjokken.no/wp-content/uploads/2022/10/Broken-lasagne.jpg?fit=1200%2C1500&ssl=1",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Karbonadedeig",
+                "type": "g",
+                "grams": 150,
+                "number": 150
+            },
+            {
+                "text": "Lasagneplater",
+                "type": "stk",
+                "grams": 45,
+                "number": 3
+            },
+            {
+                "text": "Tomatpuré",
+                "type": "ss",
+                "grams": 9,
+                "number": 0.5
+            },
+            {
+                "text": "Philadelphia light kremost",
+                "type": "ss",
+                "grams": 15,
+                "number": 1
+            },
+            {
+                "text": "Maggi kyllingbuljong",
+                "type": "terning",
+                "grams": 5,
+                "number": 0.5
+            },
+            {
+                "text": "Sjalottløk",
+                "type": "dl",
+                "grams": 30,
+                "number": 0.5
+            },
+            {
+                "text": "Hvitløk",
+                "type": "fedd",
+                "grams": 3,
+                "number": 1
+            },
+            {
+                "text": "Vann, drikkevann",
+                "type": "dl",
+                "grams": 0,
+                "number": 2
+            },
+            {
+                "text": "Tomat, hakket, tetrapak",
+                "type": "dl",
+                "grams": 100,
+                "number": 1
+            },
+            {
+                "text": "Cherrytomat",
+                "type": "neve",
+                "grams": 50,
+                "number": 1
+            },
+            {
+                "text": "Hvitost",
+                "type": "skiver",
+                "grams": 26,
+                "number": 2
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 41,
+            "carbs": 48,
+            "fat": 18,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 18,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pasta",
+        "name": "Pasta med kremet paprikasaus og biff",
+        "procedure": "Start med å koke pasta. Deretter kutter du opp paprika og har i en gryte sammen med smør og vann og koker til den er mør. Ha paprika, philadelphia light og melk i en blender og kjør til du før en jevn saus. Stek biff og legg til sides mens du steker sjampinjong i biter i samme panne. Hell over paprikasausen og tilsett creme fraiche før du lar blandingen trekke noen minutter. Smak til med salt og pepper og server sammen med pasta.",
+        "image": "https://www.njff.no/mat/pasta-di-manzo/_/image/deb1a37c-ecc0-47f8-91e4-98c7e8ff4d4d:80b41b8bf05963f72edb69678b77f98f68ecbe34/block-1024-768/pasta%20di%20manzo-1.jpg/",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Storfe, ytrefilet",
+                "type": "g",
+                "grams": 170,
+                "number": 170
+            },
+            {
+                "text": "Pasta",
+                "type": "dl",
+                "grams": 42,
+                "number": 1.4
+            },
+            {
+                "text": "Paprika",
+                "type": "stk",
+                "grams": 145,
+                "number": 1
+            },
+            {
+                "text": "Sjampinjong, rå",
+                "type": "stk",
+                "grams": 36,
+                "number": 2
+            },
+            {
+                "text": "Smør",
+                "type": "ts",
+                "grams": 11,
+                "number": 1.5
+            },
+            {
+                "text": "Philadelphia light kremost",
+                "type": "ss",
+                "grams": 15,
+                "number": 1
+            },
+            {
+                "text": "Lettmelk",
+                "type": "ss",
+                "grams": 15,
+                "number": 1.5
+            },
+            {
+                "text": "Lett creme fraiche 10%",
+                "type": "ss",
+                "grams": 27,
+                "number": 1.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 38,
+            "carbs": 48,
+            "fat": 19,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 19,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pot-steam",
+        "name": "Onepot tacogryte",
+        "procedure": "Kutt opp løken og fres den i kjelen før du så tilsetter karbonadedeigen. Stek den til den er gjennomstekt og tilsett så tacokrydder, tacosaus, mais og 2 dl vann med 1/2 kjøttbuljong terning i. Bland godt sammen før du tilsetter ris. Rør godt og la det putre til risen er ferdig og vannet er trukket inn og du har en gryte. Følg litt med og tilsett mer vann ved behov. Server så med en stor salat til og gjerne litt rømme/kesam om ønskelig om du har frikalorier.",
+        "image": "https://i0.wp.com/detgladekjokken.no/wp-content/uploads/2020/05/Tacogryte.jpg?fit=1184%2C1184&ssl=1",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Karbonadedeig",
+                "type": "g",
+                "grams": 180,
+                "number": 180
+            },
+            {
+                "text": "løk",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.25
+            },
+            {
+                "text": "Taco kryddermix, Old El Paso",
+                "type": "ts",
+                "grams": 11,
+                "number": 3
+            },
+            {
+                "text": "Tacosaus, medium, Old El Paso",
+                "type": "ss",
+                "grams": 51,
+                "number": 3
+            },
+            {
+                "text": "Ris",
+                "type": "dl",
+                "grams": 60,
+                "number": 0.75
+            },
+            {
+                "text": "Mais",
+                "type": "dl",
+                "grams": 35,
+                "number": 0.5
+            },
+            {
+                "text": "Kjøttbuljong, Maggi",
+                "type": "terning",
+                "grams": 5,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 56,
+            "carbs": 48,
+            "fat": 12,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 20,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food",
+        "name": "Blomkålsuppe med bacon",
+        "procedure": "",
+        "image": "https://johslundal.no/wp-content/uploads/2025/01/Lundal_DSC4689.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Blomkål",
+                "type": "buketter",
+                "grams": 300,
+                "number": 10
+            },
+            {
+                "text": "Løk",
+                "type": "stk",
+                "grams": 56,
+                "number": 1
+            },
+            {
+                "text": "Maggi kyllingbuljong",
+                "type": "terning",
+                "grams": 15,
+                "number": 1.5
+            },
+            {
+                "text": "Lettmelk 1,0%",
+                "type": "dl",
+                "grams": 400,
+                "number": 4
+            },
+            {
+                "text": "Hvitløk",
+                "type": "stk",
+                "grams": 80,
+                "number": 4
+            },
+            {
+                "text": "Bacon, Go og magrere, Gilde",
+                "type": "g",
+                "grams": 80,
+                "number": 80
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 53,
+            "carbs": 48,
+            "fat": 10,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 21,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-steak",
+        "name": "Viltgryte",
+        "procedure": "Kok opp poteter. Stek løk og sjampinjong i panne. Tilsett viltkjøtt og gulrot i terninger. Ha i litt vann og buljong og la putre i 15 min til gulrøttene er myke. Tilsett creme fraiche og smak til med krydder. Server med tyttebærsyltetøy og rosenkål.",
+        "image": "https://i0.wp.com/detgladekjokken.no/wp-content/uploads/2019/09/Viltgryte-med-reinskav.jpg?resize=500%2C375&ssl=1",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Rådyr, kjøtt",
+                "type": "g",
+                "grams": 180,
+                "number": 180
+            },
+            {
+                "text": "Middels store poteter",
+                "type": "stk",
+                "grams": 190,
+                "number": 3
+            },
+            {
+                "text": "Lett creme fraiche 10%",
+                "type": "ss",
+                "grams": 100,
+                "number": 5
+            },
+            {
+                "text": "Tyttebærsyltetøy",
+                "type": "ss",
+                "grams": 16,
+                "number": 1
+            },
+            {
+                "text": "Rosenkål",
+                "type": "stk",
+                "grams": 60,
+                "number": 5
+            },
+            {
+                "text": "Gulrot",
+                "type": "stk",
+                "grams": 80,
+                "number": 1
+            },
+            {
+                "text": "Løk",
+                "type": "stk",
+                "grams": 80,
+                "number": 0.5
+            },
+            {
+                "text": "Sjampinjong, rå",
+                "type": "stk",
+                "grams": 40,
+                "number": 2
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 46,
+            "carbs": 48,
+            "fat": 13,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 22,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-fish",
+        "name": "Hjemmelagd fiskegrateng",
+        "procedure": "Kok makaroni. Kok brokkoli siste minuttet sammen med makaroni. Smelt smør i kjele og rør inn mel. Spe med melk og kok opp saus. Rør inn makaroni, brokkoli og torsk. Ha i form, topp med strøkavring og stek på 200 grader i ca 35 min.",
+        "image": "https://www.oppskriftskroken.no/wp-content/uploads/2020/04/Fiskegrateng-med-makaroni-og-torsk.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Torsk",
+                "type": "g",
+                "grams": 160,
+                "number": 160
+            },
+            {
+                "text": "Brokkoli",
+                "type": "buketter",
+                "grams": 75,
+                "number": 3
+            },
+            {
+                "text": "Makaroni",
+                "type": "dl",
+                "grams": 20,
+                "number": 0.5
+            },
+            {
+                "text": "Smør",
+                "type": "ts",
+                "grams": 14,
+                "number": 2
+            },
+            {
+                "text": "Hvetemel",
+                "type": "ss",
+                "grams": 9,
+                "number": 1
+            },
+            {
+                "text": "Lettmelk 1,0%",
+                "type": "dl",
+                "grams": 300,
+                "number": 3
+            },
+            {
+                "text": "Strøkavring",
+                "type": "ts",
+                "grams": 12,
+                "number": 2
+            },
+            {
+                "text": "Gulrot",
+                "type": "stk",
+                "grams": 80,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 48,
+            "carbs": 48,
+            "fat": 16,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 23,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-variant",
+        "name": "Egenkomponert middag",
+        "procedure": "",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShlttp4j2eUiaHUzdD7dETpPQhfwqBLiGDxQ&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Grønnsaker",
+                "type": "rikelig med",
+                "grams": 200,
+                "number": 1
+            },
+            {
+                "text": "Saus/dressing",
+                "type": "porsjon",
+                "grams": 1,
+                "number": 1
+            },
+            {
+                "text": "Magert kjøtt eller hvit fisk eller mager sjømat",
+                "type": "g",
+                "grams": 180,
+                "number": 180
+            },
+            {
+                "text": "Karbokilde (ris/pasta/potet/mais m.m.)",
+                "type": "porsjon",
+                "grams": 60,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 48,
+            "carbs": 48,
+            "fat": 9,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 24,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-drumstick-outline",
+        "name": "Tikka masala",
+        "procedure": "Stek kylling med garam masala, salt, oppkuttet paprika, finhakket hvitløk og ingefær. Bland inn lett creme fraiche og smak til med krydder. La putre i 5-10 min og server med ris/salat.",
+        "image": "https://gurki.no/images/cover_img/tikka-masala1.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Kyllingfilet",
+                "type": "g",
+                "grams": 170,
+                "number": 170
+            },
+            {
+                "text": "Ris",
+                "type": "dl",
+                "grams": 64,
+                "number": 0.8
+            },
+            {
+                "text": "Lett creme fraiche 10%",
+                "type": "ss",
+                "grams": 54,
+                "number": 3
+            },
+            {
+                "text": "Paprika, rød",
+                "type": "stk",
+                "grams": 140,
+                "number": 1
+            },
+            {
+                "text": "Hvitløk",
+                "type": "fedd",
+                "grams": 1,
+                "number": 0.5
+            },
+            {
+                "text": "Ingefærrot",
+                "type": "liten bit",
+                "grams": 3,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 56,
+            "carbs": 48,
+            "fat": 11,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 25,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-nachos",
+        "name": "Nachos",
+        "procedure": "Stek karbonadedeig med tacokrydder. Fordel nachochips utover bakepapir og legg på kjøttdeig, bønner og ost. Gratiner på 200 grader til osten er gyllen. Topp med tomater og andre grønnsaker.",
+        "image": "https://brandsitesplatform-res.cloudinary.com/image/fetch/w_800,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2Fproject%2Fgmi%2Foldelpaso%2Foldelpaso-us%2Frecipes%2Fgosa9gpqd0a6exkliimkqw_gmi_hi_res_jpeg.jpeg%3F",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Tortillachips, nachochips",
+                "type": "stk",
+                "grams": 42,
+                "number": 14
+            },
+            {
+                "text": "Karbonadedeig",
+                "type": "g",
+                "grams": 110,
+                "number": 110
+            },
+            {
+                "text": "Brune bønner, Eldorado",
+                "type": "g",
+                "grams": 20,
+                "number": 20
+            },
+            {
+                "text": "Hvitost, lett 16% fett",
+                "type": "skiver",
+                "grams": 52,
+                "number": 4
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 33,
+            "carbs": 48,
+            "fat": 24,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 26,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food",
+        "name": "Kjøttkaker med ertestuing",
+        "procedure": "",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyrDw1dI-2Y1YHhrKIesmbRzBH_h2niuHQ4Q&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Karbonadedeig",
+                "type": "g",
+                "grams": 170,
+                "number": 170
+            },
+            {
+                "text": "Salt",
+                "type": "ønsket mengde",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Pepper, sort",
+                "type": "ønsket mengde",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Potetmel",
+                "type": "ts",
+                "grams": 11,
+                "number": 1.5
+            },
+            {
+                "text": "Vann, drikkevann",
+                "type": "litt",
+                "grams": 10,
+                "number": 1
+            },
+            {
+                "text": "Erter, fryst",
+                "type": "dl",
+                "grams": 102,
+                "number": 1.7
+            },
+            {
+                "text": "Lett matfløte",
+                "type": "dl",
+                "grams": 50,
+                "number": 0.5
+            },
+            {
+                "text": "Fløtesaus på pose, Toro",
+                "type": "porsjon",
+                "grams": 10,
+                "number": 1
+            },
+            {
+                "text": "Middels store poteter",
+                "type": "stk",
+                "grams": 130,
+                "number": 2
+            },
+            {
+                "text": "Sukkererter",
+                "type": "stk",
+                "grams": 14,
+                "number": 4
+            },
+            {
+                "text": "Gulrot",
+                "type": "stk",
+                "grams": 40,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 44,
+            "carbs": 48,
+            "fat": 17,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 27,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-hamburger",
+        "name": "Fiskeburger",
+        "procedure": "Kutt opp grønnsaker. Lag dressing av mager kesam, sitronsaft og hvitløk. Varm burgerbrød, legg på grønnsaker, dressing og fiskeburger.",
+        "image": "https://trinesmatblogg.no/wp-content/uploads/2013/02/IMG_2689.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Fiskekaker 80% fisk, Fiskemannen",
+                "type": "stk",
+                "grams": 130,
+                "number": 3
+            },
+            {
+                "text": "Grove hamburgerbrød, Reale",
+                "type": "stk",
+                "grams": 80,
+                "number": 1
+            },
+            {
+                "text": "Bladsalat",
+                "type": "blader",
+                "grams": 80,
+                "number": 2
+            },
+            {
+                "text": "Tomat",
+                "type": "skiver",
+                "grams": 26,
+                "number": 2
+            },
+            {
+                "text": "Agurk",
+                "type": "skiver",
+                "grams": 28,
+                "number": 5
+            },
+            {
+                "text": "Mager kesam",
+                "type": "ss",
+                "grams": 54,
+                "number": 3
+            },
+            {
+                "text": "Hvitløk",
+                "type": "fedd",
+                "grams": 1,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 49,
+            "carbs": 48,
+            "fat": 14,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 28,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-hamburger",
+        "name": "Double cheeseburger",
+        "procedure": "Form karbonadedeigen til 2 burgere, stek i panne. Skjær potet i strimler og stek i ovn/airfryer. Legg cheddar på burgerne og server i burgerbrød.",
+        "image": "https://www.burgerking.ee/images/optimized/products/meals-dbl-cheeseburger-desktop-3f91257ea004c6ec2cbf3146fec08dea.png",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Karbonadedeig",
+                "type": "g",
+                "grams": 120,
+                "number": 120
+            },
+            {
+                "text": "Cheddar, gulost",
+                "type": "skive",
+                "grams": 13,
+                "number": 1
+            },
+            {
+                "text": "Middels stor potet",
+                "type": "stk",
+                "grams": 65,
+                "number": 1
+            },
+            {
+                "text": "Grove hamburgerbrød, Reale",
+                "type": "stk",
+                "grams": 80,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 48,
+            "carbs": 48,
+            "fat": 14,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 29,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-fish",
+        "name": "Panert torsk med proteinrik saus og potet",
+        "procedure": "",
+        "image": "https://mills.no/content/uploads/2016/03/torsk_web-scaled.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Torsk",
+                "type": "g",
+                "grams": 150,
+                "number": 150
+            },
+            {
+                "text": "Corn flakes, Kelloggs",
+                "type": "dl",
+                "grams": 35,
+                "number": 2.5
+            },
+            {
+                "text": "Egg",
+                "type": "stk",
+                "grams": 55,
+                "number": 1
+            },
+            {
+                "text": "Gresk yoghurt",
+                "type": "dl",
+                "grams": 100,
+                "number": 1
+            },
+            {
+                "text": "Dill",
+                "type": "dl",
+                "grams": 6,
+                "number": 0.5
+            },
+            {
+                "text": "Sukrin",
+                "type": "ts",
+                "grams": 6,
+                "number": 1
+            },
+            {
+                "text": "Sitron",
+                "type": "ts",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Agurker, syltede",
+                "type": "skiver",
+                "grams": 20,
+                "number": 4
+            },
+            {
+                "text": "Middels stor potet",
+                "type": "stk",
+                "grams": 227,
+                "number": 3.5
+            },
+            {
+                "text": "Spinat, rå",
+                "type": "dl",
+                "grams": 12,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 62,
+            "carbs": 48,
+            "fat": 10,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 30,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pasta",
+        "name": "Pastasalat",
+        "procedure": "Lag dressing av fetaost, kesam, pesto og kefirmelk. Kok pasta. Stek kylling og bacon i biter. Kok egg hardt og skjær i biter. Bland alt til salat.",
+        "image": "https://trinesmatblogg.no/wp-content/uploads/2024/06/IMG_9809.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Fetaost",
+                "type": "dl",
+                "grams": 30,
+                "number": 0.5
+            },
+            {
+                "text": "Mager kesam",
+                "type": "ss",
+                "grams": 36,
+                "number": 2
+            },
+            {
+                "text": "Kefir (syrnet melk)",
+                "type": "ss",
+                "grams": 22,
+                "number": 2
+            },
+            {
+                "text": "Pesto, grønn",
+                "type": "ss",
+                "grams": 18,
+                "number": 1
+            },
+            {
+                "text": "Kyllingfilet",
+                "type": "g",
+                "grams": 70,
+                "number": 70
+            },
+            {
+                "text": "Grønnsaker",
+                "type": "dl",
+                "grams": 110,
+                "number": 2
+            },
+            {
+                "text": "Linsepasta",
+                "type": "dl",
+                "grams": 30,
+                "number": 1
+            },
+            {
+                "text": "Egg",
+                "type": "stk",
+                "grams": 55,
+                "number": 1
+            },
+            {
+                "text": "Bacon, Go og magrere, Gilde",
+                "type": "g",
+                "grams": 20,
+                "number": 20
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 21,
+            "carbs": 48,
+            "fat": 26,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 31,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pot-steam",
+        "name": "Verdens beste lapskaus",
+        "procedure": "Brun kjøttet i kasserolle. Skrell og kutt opp grønnsaker og ha over i kasserollen med kjøttet. Tilsett vann så det dekker grønnsakene, tilsett kyllingbuljong og la koke til lapskauskonsistens.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQko92TWIfIGmKxtYsLulfnBYVsKcEXiU5AjQ&s",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Storfe, ytrefilet",
+                "type": "g",
+                "grams": 180,
+                "number": 180
+            },
+            {
+                "text": "Middels store gulrøtter",
+                "type": "stk",
+                "grams": 200,
+                "number": 2.5
+            },
+            {
+                "text": "Kålrot, kålrabi",
+                "type": "dl",
+                "grams": 110,
+                "number": 2
+            },
+            {
+                "text": "Middels store poteter",
+                "type": "stk",
+                "grams": 260,
+                "number": 4
+            },
+            {
+                "text": "Maggi kyllingbuljong",
+                "type": "terning",
+                "grams": 10,
+                "number": 1
+            },
+            {
+                "text": "Pastinakk",
+                "type": "dl",
+                "grams": 55,
+                "number": 1
+            },
+            {
+                "text": "Grovt brød",
+                "type": "skive",
+                "grams": 20,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 64,
+            "carbs": 48,
+            "fat": 6,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 32,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-wrap",
+        "name": "Crispy chicken i tortilla",
+        "procedure": "Skjær kylling i biter og krydre. Vend i vispet egg og knuste cornflakes. Stek i airfryer/ovn på 180 grader i ca 15 min. Server i tortilla med grønt og dressing.",
+        "image": "https://sailorbailey.com/wp-content/uploads/2023/01/Crispy-Chicken-WrapsKey.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Kyllingfilet",
+                "type": "g",
+                "grams": 140,
+                "number": 140
+            },
+            {
+                "text": "Corn flakes, Kelloggs",
+                "type": "ss",
+                "grams": 27,
+                "number": 9
+            },
+            {
+                "text": "Egg",
+                "type": "stk",
+                "grams": 55,
+                "number": 1
+            },
+            {
+                "text": "Mager kesam",
+                "type": "ss",
+                "grams": 18,
+                "number": 1
+            },
+            {
+                "text": "Bladsalat",
+                "type": "rikelig med",
+                "grams": 40,
+                "number": 1
+            },
+            {
+                "text": "Stor tortilla, fullkorn",
+                "type": "stk",
+                "grams": 60,
+                "number": 1
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 52,
+            "carbs": 48,
+            "fat": 13,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 33,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-food-drumstick-outline",
+        "name": "Tom Kah Gai",
+        "procedure": "Kutt opp sjalottløk og ingefær i tynne skiver og stek i kjele. Tilsett currypaste, kokosmelk og buljong, kok i ca 10 min. Tilsett oppkuttet kylling og deretter sopp. Smak til med salt og lime.",
+        "image": "https://www.mashed.com/img/gallery/tom-kha-gai-thai-coconut-chicken-soup-recipe/l-intro-1680011894.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Kyllingfilet",
+                "type": "g",
+                "grams": 170,
+                "number": 170
+            },
+            {
+                "text": "Ris",
+                "type": "dl",
+                "grams": 56,
+                "number": 0.7
+            },
+            {
+                "text": "Sjalottløk",
+                "type": "stk",
+                "grams": 70,
+                "number": 1
+            },
+            {
+                "text": "Sjampinjong, rå",
+                "type": "stk",
+                "grams": 40,
+                "number": 2
+            },
+            {
+                "text": "Ingefærrot",
+                "type": "liten bit",
+                "grams": 5,
+                "number": 1
+            },
+            {
+                "text": "Karripasta, curry paste",
+                "type": "ss",
+                "grams": 9,
+                "number": 0.5
+            },
+            {
+                "text": "Kokosmelk lett",
+                "type": "dl",
+                "grams": 125,
+                "number": 1.25
+            },
+            {
+                "text": "Maggi kyllingbuljong",
+                "type": "terning",
+                "grams": 5,
+                "number": 0.5
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 46,
+            "carbs": 48,
+            "fat": 16,
+            "fibre": 0
+        }
+    },
+    {
+        "id": 34,
+        "portions": 1,
+        "rating": 3,
+        "protein_powder": false,
+        "heatable": true,
+        "must_be_heated": true,
+        "icon": "",
+        "meal_type": [
+            2
+        ],
+        "meal_category": [],
+        "meal_category_icon": "mdi-pasta",
+        "name": "Barnevennlig superenkel mac n' cheese med sprø spekeskinke",
+        "procedure": "Stek spekeskinke i airfryer/stekeovn til sprø. Kok makaroni. Rør inn smøreost, hvitost og valgfrie grønnsaker i varm makaroni. Topp med sprøstekt spekeskinke.",
+        "image": "https://whiteonricecouple.com/recipe/images/stove-top-mac-and-cheese-1.jpg",
+        "date_time": "",
+        "ingredients": [
+            {
+                "text": "Makaroni",
+                "type": "dl",
+                "grams": 40,
+                "number": 1
+            },
+            {
+                "text": "Mozzarella smøreost (tomat og basilikum), Kavli",
+                "type": "tube",
+                "grams": 60,
+                "number": 0.33
+            },
+            {
+                "text": "Spekeskinke, Strandaskinke, Grilstad",
+                "type": "skiver",
+                "grams": 72,
+                "number": 9
+            },
+            {
+                "text": "Hvitost",
+                "type": "skiver",
+                "grams": 39,
+                "number": 3
+            }
+        ],
+        "protein_addons": [],
+        "nutrients": {
+            "calories": 530,
+            "protein": 29,
+            "carbs": 48,
+            "fat": 26,
+            "fibre": 0
+        }
+    }
+]
