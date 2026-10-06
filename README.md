@@ -1,73 +1,28 @@
-# vuetify-app
+﻿# Matglede
 
-Scaffolded with Vuetify CLI.
+A Norwegian recipe browser built with Vue 3, Vite, and Vuetify. Recipes are loaded from `public/meals.json`; see `public/meals-format.md` for the data format.
 
-## ❗️ Documentation
+## Development
 
-- Primary docs: https://vuetifyjs.com/
-- Getting started guide: https://vuetifyjs.com/en/getting-started/installation/
-- Community support: https://community.vuetifyjs.com/
-- Issue tracker: https://issues.vuetifyjs.com/
-
-## 🧱 Stack
-
-- Framework: Vue 3 + Vite
-- UI Library: Vuetify
-- Language: JavaScript
-- Package manager: npm
-
-## 🧭 Start Here
-
-- Main entry: `src/main.js`
-- Main app component: `src/App.vue`
-- Main styles: `src/styles/`
-- Plugin setup: `src/plugins/`
-
-## 📁 Project Structure
-
-- `src/main.js` — application entry point
-- `src/App.vue` — root component
-- `src/components/` — reusable Vue components
-- `src/plugins/` — plugin registration and setup
-- `src/styles/` — global styles and theme settings
-- `public/` — static public files
-
-## ✨ Enabled Features
-
-- Base setup
-
-## 💿 Install
-
-Use your selected package manager (npm) to install dependencies:
-
-```bash
-npm install
-```
-
-## 🚀 Quick Start
-
-```bash
+```sh
 npm install
 npm run dev
 ```
 
-## 🏗️ Build
+## Verification and production
 
-```bash
+```sh
+npm test
 npm run build
+npm run preview
 ```
 
-## 🧪 Available Scripts
+Search matches recipe titles, ingredients, and protein additions, ignoring case and accents. Multiple search words must all match. Recipes can be filtered by protein and sorted by name, protein, or calories. Opening a recipe shows instructions and quantities adjustable from 1 to 20 servings.
 
-- `npm run dev`
-- `npm run build`
-- `npm run preview`
+External image URLs are preserved; unavailable images have a fallback. Nutrition values retain their original basis and are not scaled. Undocumented meal-type codes and heating flags are not displayed.
 
-## 💪 Support Vuetify Development
+## Shopping list
 
-This project uses Vuetify - an MIT licensed Open Source project. We are glad to welcome contributors and any support for ongoing development:
+Open a recipe, choose servings and any optional protein additions, then add it to the shopping list. The list combines ingredients across dishes and is saved in the current browser. Removing a dish recalculates the quantities; purchased items can be checked off.
 
-- Contribute to Vuetify and ecosystem projects: https://github.com/vuetifyjs
-- Request enterprise support: https://support.vuetifyjs.com/
-- Sponsor on GitHub: https://github.com/sponsors/vuetifyjs
-- Support on Open Collective: https://opencollective.com/vuetify
+Ingredient names match regardless of case and spacing, with explicit aliases for known equivalents such as medium potatoes and green pesto. Different product variants remain separate. Compatible units are converted (for example, tablespoons and decilitres to millilitres). When unit families differ, the supplied gram weights are summed without assuming a density. Add further verified aliases in `src/shopping.js` as needed.

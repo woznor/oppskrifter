@@ -1,12 +1,13 @@
 {
-  "name": "vuetify-app",
+  "name": "matglede",
   "private": true,
   "type": "module",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.2.10",
