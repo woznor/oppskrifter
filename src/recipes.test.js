@@ -7,8 +7,8 @@ const recipes = JSON.parse(
 )
 
 test('all recipes remain available with empty or cleared search', () => {
-  assert.equal(filterRecipes(recipes, '', false, 'original').length, 34)
-  assert.equal(filterRecipes(recipes, null, false, 'original').length, 34)
+  assert.equal(filterRecipes(recipes, '', false, 'original').length, recipes.length)
+  assert.equal(filterRecipes(recipes, null, false, 'original').length, recipes.length)
 })
 test('search finds ingredients and protein additions regardless of case or accents', () => {
   assert(

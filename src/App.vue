@@ -158,7 +158,7 @@ onMounted(loadRecipes)
             >
               <div class="card-image">
                 <img
-                  v-if="!failedImages.has(recipe.id)"
+                  v-if="recipe.image && !failedImages.has(recipe.id)"
                   :src="recipe.image"
                   alt=""
                   loading="lazy"
@@ -202,7 +202,7 @@ onMounted(loadRecipes)
           </div>
           <v-card-text class="detail-body">
             <img
-              v-if="!failedImages.has(selected.id)"
+              v-if="selected.image && !failedImages.has(selected.id)"
               class="detail-image"
               :src="selected.image"
               :alt="selected.name"

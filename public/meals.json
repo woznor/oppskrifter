@@ -2465,5 +2465,90 @@
       "fat": 26,
       "fibre": 0
     }
+  },
+  {
+    "id": 35,
+    "name": "Hot honey bowl",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-bowl-mix-outline",
+    "image": null,
+    "steps": [
+      "Lag sausen ved å varme opp honning og chiliflakes eller chilikrydder. Blandingen skal ikke koke.",
+      "Tilsett chilisaus (sriracha eller tabasco) og eddik i blandingen, og la stå i 15 minutter.",
+      "Kutt søtpotet i biter, krydre med salt og pepper, og stek på 200 grader i ca. 20 minutter.",
+      "Stek karbonadedeig og tilsett tacokrydder.",
+      "Ha karbonadedeig, søtpotet, mager cottage cheese og avokado i en skål, og topp med hot honey-saus."
+    ],
+    "ingredients": [
+      {
+        "name": "Karbonadedeig",
+        "amount": 130,
+        "unit": "g",
+        "grams": 130
+      },
+      {
+        "name": "Taco kryddermix",
+        "amount": 2,
+        "unit": "ts",
+        "grams": 7
+      },
+      {
+        "name": "Søtpotet",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 130
+      },
+      {
+        "name": "Mager cottage cheese",
+        "amount": 7,
+        "unit": "ss",
+        "grams": 112
+      },
+      {
+        "name": "Honning",
+        "amount": 2.5,
+        "unit": "ts",
+        "grams": 28
+      },
+      {
+        "name": "Chilikrydder",
+        "amount": 0.5,
+        "unit": "ts",
+        "grams": 2
+      },
+      {
+        "name": "Chilisaus",
+        "amount": 0.5,
+        "unit": "ts",
+        "grams": 2
+      },
+      {
+        "name": "Eddik, 7 %",
+        "amount": 0.5,
+        "unit": "ts",
+        "grams": 2
+      },
+      {
+        "name": "Avokado",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 30
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 50,
+      "carbs": 48,
+      "fat": 15,
+      "fibre": 6
+    }
   }
 ]
