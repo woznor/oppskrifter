@@ -532,3 +532,66 @@ footer span {
   align-items: center;
   gap: 8px;
 }
+.recipe-item {
+  position: relative;
+  min-width: 0;
+}
+.recipe-item > .recipe-card {
+  width: 100%;
+  height: 100%;
+}
+.favorite-button {
+  z-index: 1;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fffffff2 !important;
+}
+.planning-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+.planning-toolbar + .search-panel {
+  margin-top: 12px;
+}
+.week-list {
+  display: grid;
+  gap: 18px;
+}
+.week-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto 32px;
+  align-items: center;
+  gap: 12px;
+}
+.week-row > strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.week-actions,
+.copy-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.copy-actions .v-checkbox {
+  flex: 1;
+  min-width: 220px;
+}
+@media (max-width: 600px) {
+  .week-row {
+    grid-template-columns: minmax(0, 1fr) auto 32px;
+    gap: 8px;
+  }
+  .week-row > strong {
+    grid-column: 1 / -1;
+  }
+  .week-row > .v-autocomplete {
+    grid-column: 1 / -1;
+  }
+  .week-row .serving-control {
+    grid-column: 2;
+  }
+}

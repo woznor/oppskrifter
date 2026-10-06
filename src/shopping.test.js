@@ -4,7 +4,9 @@ import fs from 'node:fs'
 import {
   aggregateIngredients,
   createShoppingEntry,
-  shoppingQuantity
+  shoppingQuantity,
+  shoppingListText,
+  replaceWeekEntries
 } from './shopping.js'
 
 const combine = (ingredients) => aggregateIngredients([{ ingredients }])
@@ -98,4 +100,41 @@ test('all recipe ingredients can be aggregated without losing weight', () => {
       (row) => Number.isFinite(row.amount) && Number.isFinite(row.grams)
     )
   )
+})
+
+test('copied shopping lists omit purchased items by default and can include them', () => {
+  const items = combine([
+    item('Egg', 2, 'stk', 110),
+    item('Ris', 100, 'g', 100)
+  ])
+  const remaining = shoppingListText(items, ['egg'])
+  assert(!remaining.includes('Egg'))
+  assert(remaining.includes('100 g'))
+  assert(shoppingListText(items, ['egg'], false).includes('[x] Egg'))
+  assert.equal(
+    shoppingListText(
+      items,
+      items.map((row) => row.key)
+    ),
+    ''
+  )
+})
+test('week menu replaces earlier planned dishes while preserving manual additions', () => {
+  const recipe = {
+    id: 1,
+    name: 'Egg',
+    portions: 1,
+    ingredients: [item('Egg', 1, 'stk', 55)],
+    protein_addons: []
+  }
+  const manual = createShoppingEntry(recipe, 2)
+  const plan = [
+    { recipe, servings: 3 },
+    { recipe, servings: 1 }
+  ]
+  const once = replaceWeekEntries([manual], plan)
+  const twice = replaceWeekEntries(once, plan)
+  assert.equal(twice.length, 3)
+  assert.equal(aggregateIngredients(twice)[0].amount, 6)
+  assert.deepEqual(replaceWeekEntries(twice, []), [manual])
 })

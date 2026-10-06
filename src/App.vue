@@ -1,7 +1,8 @@
 ﻿<script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { filterRecipes, ingredientQuantity } from './recipes'
 import ShoppingCart from './components/ShoppingCart.vue'
+import WeekMenu from './components/WeekMenu.vue'
 defineEmits(['logout'])
 const cart = ref(null)
 const selectedAddons = ref([])
@@ -10,6 +11,29 @@ const loading = ref(true)
 const error = ref(false)
 const search = ref('')
 const proteinOnly = ref(false)
+const favoritesOnly = ref(false)
+const favorites = ref([])
+const favoritesStorageError = ref(false)
+const favoritesKey = 'kamilla-favorites-v1'
+try {
+  const saved = JSON.parse(localStorage.getItem(favoritesKey) || '[]')
+  if (Array.isArray(saved))
+    favorites.value = [...new Set(saved.filter(Number.isInteger))]
+} catch {
+  favoritesStorageError.value = true
+}
+watch(favorites, (ids) => {
+  try {
+    localStorage.setItem(favoritesKey, JSON.stringify(ids))
+  } catch {
+    favoritesStorageError.value = true
+  }
+})
+function toggleFavorite(id) {
+  favorites.value = favorites.value.includes(id)
+    ? favorites.value.filter((savedId) => savedId !== id)
+    : [...favorites.value, id]
+}
 const sort = ref('original')
 const selected = ref(null)
 const servings = ref(1)
@@ -22,7 +46,14 @@ const sortOptions = [
   { title: 'Færrest kalorier', value: 'calories' }
 ]
 const visibleRecipes = computed(() =>
-  filterRecipes(recipes.value, search.value, proteinOnly.value, sort.value)
+  filterRecipes(
+    recipes.value,
+    search.value,
+    proteinOnly.value,
+    sort.value
+  ).filter(
+    (recipe) => !favoritesOnly.value || favorites.value.includes(recipe.id)
+  )
 )
 async function loadRecipes() {
   loading.value = true
@@ -48,6 +79,7 @@ function openRecipe(recipe) {
 function resetFilters() {
   search.value = ''
   proteinOnly.value = false
+  favoritesOnly.value = false
   sort.value = 'original'
 }
 function imageFailed(id) {
@@ -82,6 +114,13 @@ onMounted(loadRecipes)
         </div>
       </header>
       <main class="page">
+        <div class="planning-toolbar">
+          <WeekMenu
+            :recipes="recipes"
+            @update-cart="cart.updateWeek($event)"
+            @open-recipe="openRecipe"
+          />
+        </div>
         <section class="search-panel" aria-label="Søk og filtrer oppskrifter">
           <v-text-field
             v-model="search"
@@ -98,10 +137,10 @@ onMounted(loadRecipes)
           <div class="filter-row">
             <div class="filter-buttons">
               <v-btn
-                :variant="proteinOnly ? 'outlined' : 'flat'"
-                :color="proteinOnly ? undefined : 'primary'"
+                :variant="proteinOnly || favoritesOnly ? 'outlined' : 'flat'"
+                :color="proteinOnly || favoritesOnly ? undefined : 'primary'"
                 rounded="pill"
-                @click="proteinOnly = false"
+                @click="resetFilters"
                 >Alle oppskrifter</v-btn
               ><v-btn
                 :variant="proteinOnly ? 'flat' : 'outlined'"
@@ -111,6 +150,15 @@ onMounted(loadRecipes)
                 rounded="pill"
                 @click="proteinOnly = !proteinOnly"
                 >30 g+ protein</v-btn
+              >
+              <v-btn
+                :variant="favoritesOnly ? 'flat' : 'outlined'"
+                :color="favoritesOnly ? 'primary' : undefined"
+                :aria-pressed="favoritesOnly"
+                prepend-icon="mdi-heart-outline"
+                rounded="pill"
+                @click="favoritesOnly = !favoritesOnly"
+                >Favoritter</v-btn
               >
             </div>
             <v-select
@@ -125,6 +173,9 @@ onMounted(loadRecipes)
             />
           </div>
         </section>
+        <p v-if="favoritesStorageError" class="nutrition-note" role="status">
+          Favorittene kan ikke lagres i denne nettleseren akkurat nå.
+        </p>
         <section
           class="collection"
           aria-label="Oppskrifter"
@@ -132,7 +183,13 @@ onMounted(loadRecipes)
         >
           <div class="collection-heading">
             <h2>
-              {{ search || proteinOnly ? 'Dine treff' : 'Oppskriftene mine' }}
+              {{
+                favoritesOnly
+                  ? 'Mine favoritter'
+                  : search || proteinOnly
+                    ? 'Dine treff'
+                    : 'Oppskriftene mine'
+              }}
             </h2>
             <span aria-live="polite">{{
               loading ? 'Laster …' : `${visibleRecipes.length} oppskrifter`
@@ -155,45 +212,68 @@ onMounted(loadRecipes)
           <div v-else-if="!visibleRecipes.length" class="empty-state">
             <v-icon icon="mdi-magnify" size="44" />
             <h3>Ingen oppskrifter funnet</h3>
-            <p>Prøv et annet søkeord, eller fjern proteinfilteret.</p>
+            <p>
+              {{
+                favoritesOnly && !favorites.length
+                  ? 'Trykk på hjertet ved en oppskrift for å lagre en favoritt.'
+                  : 'Prøv et annet søkeord, eller fjern filtrene.'
+              }}
+            </p>
             <v-btn color="primary" @click="resetFilters"
               >Vis alle oppskrifter</v-btn
             >
           </div>
           <div v-else class="recipe-grid">
-            <button
+            <article
               v-for="recipe in visibleRecipes"
               :key="recipe.id"
-              class="recipe-card"
-              @click="openRecipe(recipe)"
+              class="recipe-item"
             >
-              <div class="card-image">
-                <img
-                  v-if="recipe.image && !failedImages.has(recipe.id)"
-                  :src="recipe.image"
-                  alt=""
-                  loading="lazy"
-                  @error="imageFailed(recipe.id)"
-                />
-                <div v-else class="image-placeholder">
-                  <v-icon
-                    :icon="recipe.category_icon || 'mdi-silverware-fork-knife'"
-                    size="48"
-                  /><span>{{ recipe.name }}</span>
+              <button class="recipe-card" @click="openRecipe(recipe)">
+                <div class="card-image">
+                  <img
+                    v-if="recipe.image && !failedImages.has(recipe.id)"
+                    :src="recipe.image"
+                    alt=""
+                    loading="lazy"
+                    @error="imageFailed(recipe.id)"
+                  />
+                  <div v-else class="image-placeholder">
+                    <v-icon
+                      :icon="
+                        recipe.category_icon || 'mdi-silverware-fork-knife'
+                      "
+                      size="48"
+                    /><span>{{ recipe.name }}</span>
+                  </div>
                 </div>
-              </div>
-              <div class="card-content">
-                <h3>{{ recipe.name }}</h3>
-                <div class="card-bottom">
-                  <span
-                    >{{ recipe.nutrients.calories }} kcal ·
-                    {{ recipe.nutrients.protein }} g protein</span
-                  ><span class="card-arrow"
-                    ><v-icon icon="mdi-arrow-top-right" size="20"
-                  /></span>
+                <div class="card-content">
+                  <h3>{{ recipe.name }}</h3>
+                  <div class="card-bottom">
+                    <span
+                      >{{ recipe.nutrients.calories }} kcal ·
+                      {{ recipe.nutrients.protein }} g protein</span
+                    ><span class="card-arrow"
+                      ><v-icon icon="mdi-arrow-top-right" size="20"
+                    /></span>
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+              <v-btn
+                class="favorite-button"
+                :icon="
+                  favorites.includes(recipe.id)
+                    ? 'mdi-heart'
+                    : 'mdi-heart-outline'
+                "
+                color="primary"
+                variant="text"
+                size="small"
+                :aria-pressed="favorites.includes(recipe.id)"
+                :aria-label="`${favorites.includes(recipe.id) ? 'Fjern fra' : 'Legg til i'} favoritter: ${recipe.name}`"
+                @click="toggleFavorite(recipe.id)"
+              />
+            </article>
           </div>
         </section>
         <footer>
@@ -203,13 +283,29 @@ onMounted(loadRecipes)
       <v-dialog v-model="dialog" max-width="900" scrollable
         ><v-card v-if="selected" rounded="xl" class="detail-card"
           ><div class="detail-toolbar">
-            <span>OPPSKRIFT</span
-            ><v-btn
-              icon="mdi-close"
-              variant="text"
-              aria-label="Lukk oppskrift"
-              @click="dialog = false"
-            />
+            <span>OPPSKRIFT</span>
+            <div class="header-actions">
+              <v-btn
+                :icon="
+                  favorites.includes(selected.id)
+                    ? 'mdi-heart'
+                    : 'mdi-heart-outline'
+                "
+                variant="text"
+                :aria-pressed="favorites.includes(selected.id)"
+                :aria-label="
+                  favorites.includes(selected.id)
+                    ? 'Fjern fra favoritter'
+                    : 'Legg til i favoritter'
+                "
+                @click="toggleFavorite(selected.id)"
+              /><v-btn
+                icon="mdi-close"
+                variant="text"
+                aria-label="Lukk oppskrift"
+                @click="dialog = false"
+              />
+            </div>
           </div>
           <v-card-text class="detail-body">
             <img

@@ -3,7 +3,9 @@ import { computed, ref, watch } from 'vue'
 import {
   aggregateIngredients,
   createShoppingEntry,
-  shoppingQuantity
+  shoppingQuantity,
+  shoppingListText,
+  replaceWeekEntries
 } from '../shopping'
 import { formatAmount } from '../recipes'
 
@@ -14,6 +16,11 @@ const dialog = ref(false)
 const notice = ref('')
 const snackbar = ref(false)
 const storageError = ref(false)
+const remainingOnly = ref(true)
+const copyFallback = ref(false)
+const copyText = computed(() =>
+  shoppingListText(items.value, checked.value, remainingOnly.value)
+)
 try {
   const saved = JSON.parse(localStorage.getItem(storageKey) || 'null')
   if (saved && Array.isArray(saved.entries)) {
@@ -58,6 +65,30 @@ watch(
   { deep: true }
 )
 
+async function copyList() {
+  try {
+    await navigator.clipboard.writeText(`Handleliste\n\n${copyText.value}`)
+    notice.value = 'Handlelisten er kopiert'
+    snackbar.value = true
+    copyFallback.value = false
+  } catch {
+    copyFallback.value = true
+  }
+}
+function updateWeek(planned) {
+  const affected = new Set(
+    aggregateIngredients(
+      entries.value.filter((entry) => entry.source === 'week-menu')
+    ).map((item) => item.key)
+  )
+  entries.value = replaceWeekEntries(entries.value, planned)
+  for (const item of aggregateIngredients(
+    entries.value.filter((entry) => entry.source === 'week-menu')
+  ))
+    affected.add(item.key)
+  checked.value = checked.value.filter((key) => !affected.has(key))
+  showCart()
+}
 function addRecipe(recipe, servings, addons) {
   const entry = createShoppingEntry(recipe, servings, addons)
   const changed = new Set(aggregateIngredients([entry]).map((item) => item.key))
@@ -84,7 +115,7 @@ function clearCart() {
   entries.value = []
   checked.value = []
 }
-defineExpose({ addRecipe })
+defineExpose({ addRecipe, updateWeek })
 </script>
 
 <template>
@@ -122,6 +153,34 @@ defineExpose({ addRecipe })
           </p>
         </div>
         <template v-else>
+          <div class="copy-actions">
+            <v-btn
+              color="primary"
+              variant="tonal"
+              prepend-icon="mdi-content-copy"
+              :disabled="!copyText"
+              @click="copyList"
+              >Kopier handlelisten</v-btn
+            ><v-checkbox
+              v-model="remainingOnly"
+              label="Bare varer som gjenstår"
+              hide-details
+              density="compact"
+            />
+          </div>
+          <template v-if="copyFallback"
+            ><p class="nutrition-note" role="status">
+              Automatisk kopiering er ikke tilgjengelig. Marker og kopier
+              teksten nedenfor.
+            </p>
+            <v-textarea
+              :model-value="`Handleliste\n\n${copyText}`"
+              label="Handleliste som tekst"
+              readonly
+              auto-grow
+              variant="outlined"
+              @focus="$event.target.select()"
+          /></template>
           <h3 class="cart-subheading">Valgte retter</h3>
           <ul class="cart-recipes">
             <li v-for="entry in entries" :key="entry.id">
@@ -182,11 +241,7 @@ defineExpose({ addRecipe })
   <v-snackbar v-model="snackbar" :timeout="3500" color="primary"
     >{{ notice
     }}<template #actions
-      ><v-btn
-        variant="text"
-        @click="showCart"
-        >Vis liste</v-btn
-      ></template
+      ><v-btn variant="text" @click="showCart">Vis liste</v-btn></template
     ></v-snackbar
   >
 </template>

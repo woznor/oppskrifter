@@ -32,3 +32,11 @@ Ingredient names match regardless of case and spacing, with explicit aliases for
 The entry screen uses the password in `src/access.js` (initially `kamillasmat`). Successful entry stores an access version in localStorage, not the entered password. Change the password and increment `accessVersion` to reset remembered logins after deployment. The logout button removes remembered access while preserving the shopping list. Recipe loading starts after the entry screen is unlocked.
 
 This is a frontend convenience gate. The public repository, deployed JavaScript, and `meals.json` remain accessible without authentication.
+
+Favorites are saved as recipe IDs in localStorage under `kamilla-favorites-v1`. Heart buttons are available on cards and in recipe details. The favorites filter combines with search and the protein filter; logging out preserves favorites.
+
+## Weekly menu and copying
+
+The weekly menu stores one recipe and 1–20 servings for each weekday under `kamilla-week-menu-v1`. It is a reusable plan, not a dated calendar. Updating the shopping list replaces entries previously created by the menu and preserves manually added dishes. Optional protein additions are excluded. Clearing the plan is local to the menu; update the shopping list afterwards to remove its planned dishes there.
+
+Shopping list copying defaults to remaining items, with an option to include checked items. If clipboard access is unavailable, a text field supports manual copying.

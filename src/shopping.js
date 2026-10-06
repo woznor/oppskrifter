@@ -119,3 +119,23 @@ export function shoppingQuantity(item) {
   }
   return `${formatAmount(item.amount)} ${item.unit}`
 }
+
+export function shoppingListText(items, checked = [], remainingOnly = true) {
+  return items
+    .filter((item) => !remainingOnly || !checked.includes(item.key))
+    .map(
+      (item) =>
+        `${checked.includes(item.key) ? '[x]' : '[ ]'} ${item.name} – ${shoppingQuantity(item)}`
+    )
+    .join('\n')
+}
+
+export function replaceWeekEntries(entries, planned) {
+  return [
+    ...entries.filter((entry) => entry.source !== 'week-menu'),
+    ...planned.map(({ recipe, servings }) => ({
+      ...createShoppingEntry(recipe, servings),
+      source: 'week-menu'
+    }))
+  ]
+}
