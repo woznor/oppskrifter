@@ -41,3 +41,5 @@ Favorites are saved as recipe IDs in localStorage under `kamilla-favorites-v1`. 
 The weekly menu stores one recipe and 1–20 servings for each weekday under `kamilla-week-menu-v1`. It is a reusable plan, not a dated calendar. Updating the shopping list replaces entries previously created by the menu and preserves manually added dishes. Optional protein additions are excluded. Clearing the plan is local to the menu; update the shopping list afterwards to remove its planned dishes there.
 
 Shopping list copying defaults to remaining items, with an option to include checked items. If clipboard access is unavailable, a text field supports manual copying.
+
+Recipe duplication opens an editable draft with a copy name and saves it as a new recipe. Uploaded images are copied to a separate Storage object; existing external image URLs are retained. Cancelling the draft creates nothing. Recipe deletion always opens a confirmation dialog before sending the delete request.

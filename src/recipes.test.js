@@ -74,7 +74,7 @@ test('fractional ingredient amounts use Norwegian formatting', () => {
 test('servings scale both unit quantities and weight-only ingredients', () => {
   assert.equal(
     ingredientQuantity({ amount: 0.5, unit: 'stk', grams: 52 }, 3, 1),
-    '1,5 stk'
+    '156 g'
   )
   assert.equal(
     ingredientQuantity({ amount: null, unit: null, grams: 30 }, 2, 1),
@@ -106,5 +106,22 @@ test('meal filters include multi-type recipes and distinguish breakfast code zer
       (recipe) =>
         recipe.meal_types.includes(0) && recipe.nutrients.protein >= 30
     )
+  )
+})
+
+test('ingredient display uses only grams or decilitres, preserving small volumes', () => {
+  for (const recipe of recipes)
+    for (const ingredient of [...recipe.ingredients, ...recipe.protein_addons])
+      assert.match(
+        ingredientQuantity(ingredient, 1, recipe.portions),
+        / (g|dl)$/
+      )
+  assert.equal(
+    ingredientQuantity({ amount: 0.5, unit: 'ts', grams: 2 }, 1, 1),
+    '0,025 dl'
+  )
+  assert.equal(
+    ingredientQuantity({ amount: 250, unit: 'ml', grams: 258 }, 2, 1),
+    '5 dl'
   )
 })

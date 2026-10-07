@@ -140,6 +140,18 @@ export function createHandler({ db, password, secret, origins }) {
         }
         let imagePath = existing?.image_path || null
         let externalImage = existing?.external_image || null
+        let copySource = null
+        if (creating && form.has('copyFrom')) {
+          const copyId = Number(form.get('copyFrom'))
+          if (!Number.isSafeInteger(copyId) || copyId < 1)
+            throw new ApiError(400, 'Ugyldig oppskrift å kopiere.')
+          copySource = check(
+            await db.from('recipes').select('*').eq('id', copyId).maybeSingle()
+          )
+          if (!copySource)
+            throw new ApiError(404, 'Originaloppskriften finnes ikke lenger.')
+          externalImage = copySource.external_image || null
+        }
         if (form.get('removeImage') === 'true') {
           imagePath = null
           externalImage = null
@@ -150,12 +162,23 @@ export function createHandler({ db, password, secret, origins }) {
           const extension = validateImage(bytes, file.type)
           uploadedPath = `${crypto.randomUUID()}.${extension}`
           check(
+            await db.storage.from(bucket).upload(uploadedPath, bytes, {
+              contentType: file.type,
+              upsert: false
+            })
+          )
+          imagePath = uploadedPath
+          externalImage = null
+        } else if (
+          copySource?.image_path &&
+          form.get('removeImage') !== 'true'
+        ) {
+          const extension = copySource.image_path.split('.').pop()
+          uploadedPath = `${crypto.randomUUID()}.${extension}`
+          check(
             await db.storage
               .from(bucket)
-              .upload(uploadedPath, bytes, {
-                contentType: file.type,
-                upsert: false
-              })
+              .copy(copySource.image_path, uploadedPath)
           )
           imagePath = uploadedPath
           externalImage = null

@@ -42,6 +42,11 @@ function database() {
         db.files.add(path)
         return { data: { path } }
       },
+      copy: async (from, to) => {
+        if (!db.files.has(from)) return { error: new Error('source missing') }
+        db.files.add(to)
+        return { data: { path: to } }
+      },
       remove: async (paths) => {
         paths.forEach((path) => db.files.delete(path))
         return { data: [] }
@@ -329,4 +334,50 @@ test('failed writes clean up uploads and invalid images are rejected', async () 
     () => validateImage(new Uint8Array(6 * 1024 * 1024 + 1), 'image/jpeg'),
     { status: 400 }
   )
+})
+
+test('duplicating recipes owns a separate image and preserves the original', async () => {
+  const { db, call } = await setup()
+  const original = await (
+    await call('/recipes', { method: 'POST', body: form(recipe, photo()) })
+  ).json()
+  const originalPath = [...db.files][0]
+  const body = form({ ...original, name: 'Testrett (kopi)' })
+  body.set('copyFrom', String(original.id))
+  const response = await call('/recipes', { method: 'POST', body })
+  assert.equal(response.status, 201)
+  const copy = await response.json()
+  assert.notEqual(copy.id, original.id)
+  assert.equal(copy.version, 1)
+  assert.equal(db.files.size, 2)
+  const copyPath = [...db.files].find((path) => path !== originalPath)
+  assert.equal(
+    db.rows.find((row) => row.id === original.id).recipe.name,
+    'Testrett'
+  )
+  await call(`/recipes/${original.id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({ version: original.version })
+  })
+  assert(db.files.has(copyPath))
+  assert(!db.files.has(originalPath))
+  assert.equal(db.rows.length, 1)
+})
+test('duplication with a replacement image does not leave an unused image copy', async () => {
+  const { db, call } = await setup()
+  const original = await (
+    await call('/recipes', { method: 'POST', body: form(recipe, photo()) })
+  ).json()
+  const body = form({ ...original, name: 'Replacement copy' }, photo())
+  body.set('copyFrom', String(original.id))
+  assert.equal((await call('/recipes', { method: 'POST', body })).status, 201)
+  assert.equal(db.files.size, 2)
+  db.failWrite = true
+  const failed = form(recipe)
+  failed.set('copyFrom', String(original.id))
+  assert.equal(
+    (await call('/recipes', { method: 'POST', body: failed })).status,
+    500
+  )
+  assert.equal(db.files.size, 2)
 })

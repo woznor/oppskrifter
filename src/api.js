@@ -56,10 +56,11 @@ export async function login(password) {
   })
   setSession(data.token)
 }
-export function saveRecipe(recipe, file, removeImage) {
+export function saveRecipe(recipe, file, removeImage, copyFrom = null) {
   const form = new FormData()
   form.set('recipe', JSON.stringify(recipe))
   form.set('removeImage', String(removeImage))
+  if (copyFrom !== null) form.set('copyFrom', String(copyFrom))
   if (file) form.set('image', file)
   return apiRequest(recipe.id ? `/recipes/${recipe.id}` : '/recipes', {
     method: recipe.id ? 'PATCH' : 'POST',

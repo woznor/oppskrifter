@@ -73,6 +73,7 @@ const photo = new Blob(
   { type: 'image/png' }
 )
 let created
+let duplicated
 try {
   const response = await request('/recipes', {
     method: 'POST',
@@ -87,6 +88,19 @@ try {
     'Signed image unavailable'
   )
   const previous = structuredClone(created)
+  const copyForm = form({ ...created, name: `${recipe.name} copy` })
+  copyForm.set('copyFrom', String(created.id))
+  const copyResponse = await request('/recipes', {
+    method: 'POST',
+    body: copyForm
+  })
+  assert.equal(copyResponse.status, 201, 'Duplication failed')
+  duplicated = await copyResponse.json()
+  assert.notEqual(duplicated.id, created.id)
+  assert.notEqual(
+    new URL(duplicated.image).pathname,
+    new URL(created.image).pathname
+  )
   const edit = await request(`/recipes/${created.id}`, {
     method: 'PATCH',
     body: form({ ...created, name: `${recipe.name} edited` }, photo)
@@ -115,11 +129,17 @@ try {
     'Verified create, edit, image upload/replacement/removal and stale-edit rejection.'
   )
 } finally {
-  if (created) {
-    const response = await request(`/recipes/${created.id}`, {
+  for (const target of [created, duplicated].filter(Boolean)) {
+    if (target === duplicated)
+      assert.equal(
+        (await fetch(target.image)).status,
+        200,
+        'Duplicate image lost after deleting original'
+      )
+    const response = await request(`/recipes/${target.id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ version: created.version })
+      body: JSON.stringify({ version: target.version })
     })
     assert.equal(response.status, 200, 'Test recipe cleanup failed')
   }

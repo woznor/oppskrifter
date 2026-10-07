@@ -1,9 +1,10 @@
 <script setup>
 import { computed, ref, watch, onUnmounted, toRaw } from 'vue'
 import { saveRecipe } from '../api'
-import { mealTypeOptions } from '../recipes'
+import { ingredientMeasure, mealTypeOptions } from '../recipes'
 const props = defineProps({
   modelValue: Boolean,
+  duplicate: Boolean,
   recipe: { type: Object, default: null }
 })
 const emit = defineEmits(['update:modelValue', 'saved'])
@@ -34,7 +35,7 @@ const portionsRule = (value) =>
     Number(value) >= 1 &&
     Number(value) <= 100) ||
   'Velg 1–100 porsjoner'
-const ingredient = () => ({ name: '', amount: null, unit: null, grams: 0 })
+const ingredient = () => ({ name: '', amount: 0, unit: 'g', grams: 0 })
 const imagePreview = computed(
   () => preview.value || (removeImage.value ? null : props.recipe?.image)
 )
@@ -68,6 +69,16 @@ watch(
           steps: [''],
           nutrients: { calories: 0, protein: 0, carbs: 0, fat: 0, fibre: 0 }
         }
+    for (const field of ['ingredients', 'protein_addons'])
+      draft.value[field] = draft.value[field].map((item) => ({
+        ...item,
+        ...ingredientMeasure(item)
+      }))
+    if (props.duplicate) {
+      delete draft.value.id
+      delete draft.value.version
+      draft.value.name = `${draft.value.name} (kopi)`
+    }
     file.value = null
     removeImage.value = false
     error.value = ''
@@ -90,7 +101,7 @@ async function save() {
             ? null
             : Number(item.amount),
         unit: item.unit?.trim() || null,
-        grams: Number(item.grams)
+        grams: Number(item.unit === 'g' ? item.amount : item.grams)
       }))
     for (const key of Object.keys(nutrientLabels))
       payload.nutrients[key] = Number(payload.nutrients[key])
@@ -101,7 +112,12 @@ async function save() {
         upload.size > 6 * 1024 * 1024)
     )
       throw new Error('Velg et JPEG-, PNG- eller WebP-bilde under 6 MB.')
-    const saved = await saveRecipe(payload, upload, removeImage.value)
+    const saved = await saveRecipe(
+      payload,
+      upload,
+      removeImage.value,
+      props.duplicate ? props.recipe.id : null
+    )
     emit('saved', saved)
     emit('update:modelValue', false)
   } catch (failure) {
@@ -122,7 +138,13 @@ async function save() {
   >
     <v-card v-if="draft" rounded="xl" class="detail-card">
       <div class="detail-toolbar">
-        <span>{{ recipe ? 'REDIGER OPPSKRIFT' : 'NY OPPSKRIFT' }}</span
+        <span>{{
+          duplicate
+            ? 'DUPLISER OPPSKRIFT'
+            : recipe
+              ? 'REDIGER OPPSKRIFT'
+              : 'NY OPPSKRIFT'
+        }}</span>
         ><v-btn
           icon="mdi-close"
           variant="text"
@@ -132,6 +154,10 @@ async function save() {
         />
       </div>
       <v-card-text class="detail-body">
+        <p v-if="duplicate" class="nutrition-note">
+          Kopien får eget navn og bilde. Originalen beholdes uendret. Trykk
+          Lagre oppskrift når kopien er klar.
+        </p>
         <v-form ref="form" @submit.prevent="save">
           <fieldset class="editor-fields" :disabled="busy">
             <v-text-field
@@ -206,10 +232,7 @@ async function save() {
                   step="any"
                   variant="outlined"
                   density="compact"
-                  :rules="[
-                    (value) =>
-                      value == null || value === '' || nonnegative(value)
-                  ]"
+                  :rules="[nonnegative]"
                 />
                 <v-text-field
                   v-model="item.unit"
@@ -219,6 +242,7 @@ async function save() {
                   density="compact"
                 />
                 <v-text-field
+                  v-if="item.unit === 'dl'"
                   v-model="item.grams"
                   label="Gram"
                   type="number"

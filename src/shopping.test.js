@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
+import { formatAmount } from './recipes.js'
 import {
   aggregateIngredients,
   createShoppingEntry,
@@ -19,7 +20,7 @@ test('same ingredients merge despite case and spacing; variants remain separate'
     item('Hvitost, lett', 1, 'skiver', 13)
   ])
   assert.equal(result.length, 2)
-  assert.equal(result.find((row) => row.key === 'hvitost').amount, 5)
+  assert.equal(result.find((row) => row.key === 'hvitost').amount, 65)
   assert.equal(result.find((row) => row.key === 'hvitost').grams, 65)
 })
 test('explicit ingredient synonyms merge', () => {
@@ -28,7 +29,7 @@ test('explicit ingredient synonyms merge', () => {
     item('middels store poteter', 2, 'stk', 160)
   ])
   assert.equal(result.length, 1)
-  assert.equal(result[0].amount, 3)
+  assert.equal(result[0].amount, 240)
 })
 test('mixed unit families use supplied weights instead of guessed densities', () => {
   const result = combine([
@@ -47,7 +48,7 @@ test('compatible volume units and weight units are converted before summing', ()
     item('Ris', 0.5, 'kg', 500),
     item('ris', 600, 'g', 600)
   ])
-  assert.equal(shoppingQuantity(weight[0]), '1,1 kg')
+  assert.equal(shoppingQuantity(weight[0]), `${formatAmount(1100)} g`)
 })
 test('weight-only ingredients combine with counted ingredients by weight', () => {
   const result = combine([
@@ -78,8 +79,8 @@ test('removing a selected dish reduces aggregated amounts', () => {
     { ingredients: [item('Egg', 2, 'stk', 110)] },
     { ingredients: [item('egg', 1, 'stk', 55)] }
   ]
-  assert.equal(aggregateIngredients(entries)[0].amount, 3)
-  assert.equal(aggregateIngredients(entries.slice(1))[0].amount, 1)
+  assert.equal(aggregateIngredients(entries)[0].amount, 165)
+  assert.equal(aggregateIngredients(entries.slice(1))[0].amount, 55)
   assert.deepEqual(aggregateIngredients([]), [])
 })
 test('all recipe ingredients can be aggregated without losing weight', () => {
@@ -97,7 +98,10 @@ test('all recipe ingredients can be aggregated without losing weight', () => {
   )
   assert(
     result.every(
-      (row) => Number.isFinite(row.amount) && Number.isFinite(row.grams)
+      (row) =>
+        Number.isFinite(row.amount) &&
+        Number.isFinite(row.grams) &&
+        ['g', 'dl'].includes(row.unit)
     )
   )
 })
@@ -110,7 +114,9 @@ test('copied shopping lists omit purchased items by default and can include them
   const remaining = shoppingListText(items, ['egg'])
   assert(!remaining.includes('Egg'))
   assert(remaining.includes('100 g'))
-  assert(shoppingListText(items, ['egg'], false).includes('[x] Egg'))
+  const all = shoppingListText(items, ['egg'], false)
+  assert(all.includes('Egg \u2013 110 g'))
+  assert(!/[\[\]]/.test(all))
   assert.equal(
     shoppingListText(
       items,
@@ -135,6 +141,6 @@ test('week menu replaces earlier planned dishes while preserving manual addition
   const once = replaceWeekEntries([manual], plan)
   const twice = replaceWeekEntries(once, plan)
   assert.equal(twice.length, 3)
-  assert.equal(aggregateIngredients(twice)[0].amount, 6)
+  assert.equal(aggregateIngredients(twice)[0].amount, 330)
   assert.deepEqual(replaceWeekEntries(twice, []), [manual])
 })

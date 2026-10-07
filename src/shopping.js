@@ -1,4 +1,4 @@
-import { formatAmount } from './recipes.js'
+import { formatAmount, ingredientMeasure } from './recipes.js'
 
 const clean = (value) =>
   String(value ?? '')
@@ -14,35 +14,6 @@ const aliases = {
   'grønn pesto': 'pesto, grønn',
   'sjampinjong, fersk': 'sjampinjong, rå'
 }
-const units = {
-  skive: 'skiver',
-  stk: 'stk',
-  stykker: 'stk',
-  stykk: 'stk',
-  boks: 'bokser',
-  bokser: 'bokser',
-  gram: 'g',
-  kg: 'g',
-  kilo: 'g',
-  liter: 'ml',
-  l: 'ml',
-  dl: 'ml',
-  cl: 'ml',
-  ml: 'ml',
-  ss: 'ml',
-  ts: 'ml'
-}
-const factors = {
-  kg: 1000,
-  kilo: 1000,
-  l: 1000,
-  liter: 1000,
-  dl: 100,
-  cl: 10,
-  ss: 15,
-  ts: 5
-}
-
 export function ingredientKey(name) {
   const key = clean(name)
   return aliases[key] || key
@@ -83,13 +54,7 @@ export function aggregateIngredients(entries) {
         })
       const group = groups.get(key)
       group.grams += item.grams
-      const rawUnit = clean(item.unit)
-      const unit =
-        item.amount == null || !rawUnit ? 'g' : units[rawUnit] || rawUnit
-      const amount =
-        item.amount == null || !rawUnit
-          ? item.grams
-          : item.amount * (factors[rawUnit] || 1)
+      const { unit, amount } = ingredientMeasure(item)
       group.measures.set(unit, (group.measures.get(unit) || 0) + amount)
     }
   }
@@ -111,22 +76,14 @@ export function aggregateIngredients(entries) {
 }
 
 export function shoppingQuantity(item) {
-  if (item.unit === 'g' && item.amount >= 1000)
-    return `${formatAmount(item.amount / 1000)} kg`
-  if (item.unit === 'ml') {
-    if (item.amount >= 1000) return `${formatAmount(item.amount / 1000)} l`
-    if (item.amount >= 100) return `${formatAmount(item.amount / 100)} dl`
-  }
-  return `${formatAmount(item.amount)} ${item.unit}`
+  const measure = ingredientMeasure(item)
+  return `${formatAmount(measure.amount, measure.unit === 'dl' ? 4 : 2)} ${measure.unit}`
 }
 
 export function shoppingListText(items, checked = [], remainingOnly = true) {
   return items
     .filter((item) => !remainingOnly || !checked.includes(item.key))
-    .map(
-      (item) =>
-        `${checked.includes(item.key) ? '[x]' : '[ ]'} ${item.name} – ${shoppingQuantity(item)}`
-    )
+    .map((item) => `${item.name} – ${shoppingQuantity(item)}`)
     .join('\n')
 }
 

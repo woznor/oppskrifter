@@ -11,16 +11,21 @@ const selectedAddons = ref([])
 const recipes = ref([])
 const editorOpen = ref(false)
 const editTarget = ref(null)
+const duplicating = ref(false)
+const deleteTarget = ref(null)
 const deleteOpen = ref(false)
 const deleting = ref(false)
 const managementError = ref('')
 const message = ref('')
 const messageOpen = ref(false)
 function requestDelete() {
+  if (!selected.value) return
+  deleteTarget.value = selected.value
   managementError.value = ''
   deleteOpen.value = true
 }
-function openEditor(recipe = null) {
+function openEditor(recipe = null, duplicate = false) {
+  duplicating.value = duplicate
   editTarget.value = recipe
   dialog.value = false
   editorOpen.value = true
@@ -37,18 +42,18 @@ function recipeSaved(recipe) {
   messageOpen.value = true
 }
 async function deleteRecipe() {
+  if (!deleteOpen.value || !deleteTarget.value || deleting.value) return
+  const target = deleteTarget.value
   deleting.value = true
   managementError.value = ''
   try {
-    await apiRequest(`/recipes/${selected.value.id}`, {
+    await apiRequest(`/recipes/${target.id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ version: selected.value.version })
+      body: JSON.stringify({ version: target.version })
     })
-    recipes.value = recipes.value.filter(
-      (recipe) => recipe.id !== selected.value.id
-    )
-    favorites.value = favorites.value.filter((id) => id !== selected.value.id)
+    recipes.value = recipes.value.filter((recipe) => recipe.id !== target.id)
+    favorites.value = favorites.value.filter((id) => id !== target.id)
     deleteOpen.value = false
     dialog.value = false
     message.value = 'Oppskriften er slettet'
@@ -417,6 +422,11 @@ onMounted(loadRecipes)
                 >Rediger</v-btn
               ><v-btn
                 variant="text"
+                prepend-icon="mdi-content-copy"
+                @click="openEditor(selected, true)"
+                >Dupliser</v-btn
+              ><v-btn
+                variant="text"
                 prepend-icon="mdi-delete-outline"
                 @click="requestDelete"
                 >Slett</v-btn
@@ -520,14 +530,15 @@ onMounted(loadRecipes)
       <RecipeEditor
         v-model="editorOpen"
         :recipe="editTarget"
+        :duplicate="duplicating"
         @saved="recipeSaved"
       />
       <v-dialog v-model="deleteOpen" max-width="450" :persistent="deleting"
         ><v-card rounded="xl"
           ><v-card-title>Slett oppskrift?</v-card-title
           ><v-card-text
-            >Vil du slette «{{ selected?.name }}»? Oppskriften og det opplastede
-            bildet fjernes. Dette kan ikke angres.<v-alert
+            >Vil du slette «{{ deleteTarget?.name }}»? Oppskriften og det
+            opplastede bildet fjernes. Dette kan ikke angres.<v-alert
               v-if="managementError"
               type="error"
               variant="tonal"

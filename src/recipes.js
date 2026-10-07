@@ -44,16 +44,31 @@ export function filterRecipes(
     result.sort((a, b) => a.nutrients.calories - b.nutrients.calories)
   return result
 }
-export function formatAmount(value) {
-  return new Intl.NumberFormat('nb-NO', { maximumFractionDigits: 2 }).format(
-    value
-  )
+export function formatAmount(value, maximumFractionDigits = 2) {
+  return new Intl.NumberFormat('nb-NO', { maximumFractionDigits }).format(value)
 }
 
 export function ingredientQuantity(ingredient, servings, portions) {
   const factor = servings / portions
-  if (ingredient.amount != null && ingredient.unit && ingredient.unit !== 'g') {
-    return `${formatAmount(ingredient.amount * factor)} ${ingredient.unit}`
+  const measure = ingredientMeasure(ingredient)
+  return `${formatAmount(measure.amount * factor, measure.unit === 'dl' ? 4 : 2)} ${measure.unit}`
+}
+
+export function ingredientMeasure(ingredient) {
+  const unit = String(ingredient.unit ?? '')
+    .trim()
+    .toLowerCase()
+  const volumeInDl = {
+    l: 10,
+    liter: 10,
+    dl: 1,
+    cl: 0.1,
+    ml: 0.01,
+    ss: 0.15,
+    ts: 0.05
   }
-  return `${formatAmount(ingredient.grams * factor)} g`
+  if (ingredient.amount != null && Object.hasOwn(volumeInDl, unit)) {
+    return { amount: ingredient.amount * volumeInDl[unit], unit: 'dl' }
+  }
+  return { amount: ingredient.grams, unit: 'g' }
 }
