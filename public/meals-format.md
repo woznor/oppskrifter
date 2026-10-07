@@ -1,13 +1,13 @@
 # Recipe data
 
-`meals.json` contains an array of recipes. IDs are stable. Text is UTF-8.
+`data/meals.json` is an import backup containing an array of recipes. Live recipes are stored in Supabase and returned by the API. IDs are stable. Text is UTF-8. The API adds `version` for conflict detection and `has_uploaded_image` for image management.
 
 - `name`: recipe title.
 - `portions`: number of servings the ingredient quantities make.
 - `rating`: original rating; currently every recipe has 3. The scale is not documented.
 - `protein_powder`: original flag, retained without reinterpretation.
 - `heatable`, `must_be_heated`: original flags. Confirm whether `heatable` means reheatable before using these to label recipes; some recipes require heating while `heatable` is false.
-- `meal_types`: original numeric meal-type codes. Their labels need confirmation before displaying category names.
+- `meal_types`: numeric meal-type codes: `0` = Frokost, `1` = Lunsj, `2` = Middag, `3` = Kvelds. A recipe can belong to multiple meal types.
 - `category_icon`: Vuetify/MDI icon name, or `null` when unavailable.
 - `image`: original external image URL, or `null` when no image URL is available. The app shows a placeholder for recipes without an image.
 - `steps`: ordered plain-text instructions. An empty array means instructions are missing. Render these as text, without HTML.

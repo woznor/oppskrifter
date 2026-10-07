@@ -1,0 +1,5 @@
+project_id = "kamillas-oppskriftsbok"
+
+[functions.recipes-api]
+verify_jwt = false
+entrypoint = "./functions/recipes-api/index.js"

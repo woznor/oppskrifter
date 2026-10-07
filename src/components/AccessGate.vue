@@ -1,39 +1,53 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import App from '../App.vue'
-import { accessStorageKey, accessVersion, sitePassword } from '../access'
+import { apiUrl, apiRequest, hasSession, login, setSession } from '../api'
 
 const unlocked = ref(false)
 const password = ref('')
 const error = ref('')
-const storageMessage = ref('')
-try {
-  unlocked.value = localStorage.getItem(accessStorageKey) === accessVersion
-} catch {
-  storageMessage.value = 'Nettleseren kan ikke huske innloggingen akkurat nå.'
-}
-function unlock() {
-  if (password.value !== sitePassword) {
-    error.value = 'Feil passord. Prøv igjen.'
-    return
-  }
+const busy = ref(false)
+async function restore() {
+  if (!hasSession()) return
+  busy.value = true
   try {
-    localStorage.setItem(accessStorageKey, accessVersion)
-  } catch {
-    /* Access still works without storage. */
+    await apiRequest('/session')
+    unlocked.value = true
+  } catch (failure) {
+    error.value = failure.message
+  } finally {
+    busy.value = false
   }
-  password.value = ''
-  unlocked.value = true
+}
+async function unlock() {
+  busy.value = true
+  error.value = ''
+  try {
+    await login(password.value)
+    password.value = ''
+    unlocked.value = true
+  } catch (failure) {
+    error.value = failure.message
+  } finally {
+    busy.value = false
+  }
 }
 function logout() {
-  try {
-    localStorage.removeItem(accessStorageKey)
-  } catch {
-    storageMessage.value = 'Innloggingen kunne ikke fjernes fra nettleseren.'
-  }
+  setSession('')
   unlocked.value = false
   error.value = ''
 }
+function sessionExpired() {
+  unlocked.value = false
+  error.value = 'Logg inn på nytt for å fortsette.'
+}
+onMounted(() => {
+  window.addEventListener('recipe-session-expired', sessionExpired)
+  restore()
+})
+onUnmounted(() =>
+  window.removeEventListener('recipe-session-expired', sessionExpired)
+)
 </script>
 
 <template>
@@ -55,12 +69,21 @@ function logout() {
             autofocus
             @update:model-value="error = ''"
           />
-          <v-btn type="submit" color="primary" block :disabled="!password"
+          <v-btn
+            type="submit"
+            color="primary"
+            block
+            :disabled="!password || !apiUrl || busy"
+            :loading="busy"
             >Åpne oppskriftsboken</v-btn
           >
         </form>
         <p class="access-note" role="status">
-          {{ storageMessage || 'Denne nettleseren husker innloggingen din.' }}
+          {{
+            apiUrl
+              ? 'Denne nettleseren husker innloggingen i opptil 30 dager.'
+              : 'Oppskriftsboken venter på at backend blir koblet til.'
+          }}
         </p>
       </section>
     </v-main>

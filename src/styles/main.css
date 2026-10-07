@@ -595,3 +595,90 @@ footer span {
     grid-column: 2;
   }
 }
+.filter-selects {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  justify-content: flex-end;
+}
+.meal-select {
+  min-width: 155px;
+  max-width: 180px;
+}
+.filter-selects .sort-select {
+  min-width: 195px;
+}
+@media (max-width: 960px) {
+  .filter-row {
+    flex-wrap: wrap;
+  }
+  .filter-selects {
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  .filter-selects {
+    width: 100%;
+    flex-direction: column;
+  }
+  .meal-select,
+  .filter-selects .sort-select {
+    max-width: none;
+    min-width: 0;
+  }
+}
+.editor-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.editor-columns {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 16px;
+}
+.editor-ingredient {
+  display: grid;
+  grid-template-columns: minmax(140px, 2fr) repeat(3, minmax(75px, 1fr)) 40px;
+  gap: 8px;
+  align-items: start;
+}
+.editor-step {
+  display: flex;
+  gap: 8px;
+  align-items: start;
+}
+.editor-nutrients {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.editor-image {
+  max-height: 200px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+.recipe-management {
+  display: flex;
+  gap: 8px;
+  margin: -8px 0 12px;
+}
+@media (max-width: 600px) {
+  .editor-ingredient {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) 36px;
+  }
+  .editor-ingredient > :first-child {
+    grid-column: 1 / -1;
+  }
+  .editor-nutrients {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .editor-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

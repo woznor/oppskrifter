@@ -28,7 +28,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
-      - run: npm run build
+      - name: Build frontend
+        env:
+          VITE_RECIPE_API_URL: ${{ vars.VITE_RECIPE_API_URL }}
+        run: |
+          test -n "$VITE_RECIPE_API_URL" || { echo "Set the VITE_RECIPE_API_URL repository variable first."; exit 1; }
+          npm run build
       - uses: actions/configure-pages@v5
         with:
           enablement: true

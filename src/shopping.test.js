@@ -84,7 +84,7 @@ test('removing a selected dish reduces aggregated amounts', () => {
 })
 test('all recipe ingredients can be aggregated without losing weight', () => {
   const recipes = JSON.parse(
-    fs.readFileSync(new URL('../public/meals.json', import.meta.url), 'utf8')
+    fs.readFileSync(new URL('../data/meals.json', import.meta.url), 'utf8')
   )
   const entries = recipes.map((recipe) => createShoppingEntry(recipe, 3))
   const expected = entries

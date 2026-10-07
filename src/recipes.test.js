@@ -1,14 +1,20 @@
-﻿import test from 'node:test'
+import test from 'node:test'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { filterRecipes, formatAmount, ingredientQuantity } from './recipes.js'
 const recipes = JSON.parse(
-  fs.readFileSync(new URL('../public/meals.json', import.meta.url), 'utf8')
+  fs.readFileSync(new URL('../data/meals.json', import.meta.url), 'utf8')
 )
 
 test('all recipes remain available with empty or cleared search', () => {
-  assert.equal(filterRecipes(recipes, '', false, 'original').length, recipes.length)
-  assert.equal(filterRecipes(recipes, null, false, 'original').length, recipes.length)
+  assert.equal(
+    filterRecipes(recipes, '', false, 'original').length,
+    recipes.length
+  )
+  assert.equal(
+    filterRecipes(recipes, null, false, 'original').length,
+    recipes.length
+  )
 })
 test('search finds ingredients and protein additions regardless of case or accents', () => {
   assert(
@@ -77,5 +83,28 @@ test('servings scale both unit quantities and weight-only ingredients', () => {
   assert.equal(
     ingredientQuantity({ amount: 100, unit: 'g', grams: 100 }, 1, 2),
     '50 g'
+  )
+})
+
+test('meal filters include multi-type recipes and distinguish breakfast code zero', () => {
+  const breakfast = filterRecipes(recipes, '', false, 'original', 0)
+  const dinner = filterRecipes(recipes, '', false, 'original', 2)
+  const evening = filterRecipes(recipes, '', false, 'original', 3)
+  assert(breakfast.some((recipe) => recipe.id === 1))
+  assert(evening.some((recipe) => recipe.id === 1))
+  assert(!dinner.some((recipe) => recipe.id === 1))
+  assert(dinner.some((recipe) => recipe.id === 2))
+  assert(breakfast.every((recipe) => recipe.meal_types.includes(0)))
+  assert.equal(
+    filterRecipes(recipes, '', false, 'original', null).length,
+    recipes.length
+  )
+  const combined = filterRecipes(recipes, 'ost', true, 'protein', 0)
+  assert(combined.length > 0)
+  assert(
+    combined.every(
+      (recipe) =>
+        recipe.meal_types.includes(0) && recipe.nutrients.protein >= 30
+    )
   )
 })

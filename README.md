@@ -1,11 +1,12 @@
 # Kamillas oppskriftsbok
 
-A personal Norwegian recipe collection for Kamilla's family and friends, built with Vue 3, Vite, and Vuetify. Recipes are loaded from `public/meals.json`; see `public/meals-format.md` for the data format.
+A personal Norwegian recipe collection for Kamilla's family and friends, built with Vue 3, Vite, and Vuetify. Recipes and uploaded images are stored in Supabase. See [backend setup](docs/backend-setup.md) for deployment and [recipe format](public/meals-format.md) for the data format. `data/meals.json` is the original import backup.
 
 ## Development
 
 ```sh
 npm install
+cp .env.example .env.local
 npm run dev
 ```
 
@@ -19,7 +20,7 @@ npm run preview
 
 Search matches recipe titles, ingredients, and protein additions, ignoring case and accents. Multiple search words must all match. Recipes can be filtered by protein and sorted by name, protein, or calories. Opening a recipe shows instructions and quantities adjustable from 1 to 20 servings.
 
-External image URLs are preserved; unavailable images have a fallback. Nutrition values retain their original basis and are not scaled. Undocumented meal-type codes and heating flags are not displayed.
+The recipe editor supports creating, updating and deleting recipes, plus image uploads and removal. Imported external image URLs are retained until successfully copied to Storage or replaced with an upload. Nutrition values retain their original basis and are not scaled. Recipes can be filtered by Frokost (0), Lunsj (1), Middag (2) and Kvelds (3).
 
 ## Shopping list
 
@@ -27,11 +28,11 @@ Open a recipe, choose servings and any optional protein additions, then add it t
 
 Ingredient names match regardless of case and spacing, with explicit aliases for known equivalents such as medium potatoes and green pesto. Different product variants remain separate. Compatible units are converted (for example, tablespoons and decilitres to millilitres). When unit families differ, the supplied gram weights are summed without assuming a density. Add further verified aliases in `src/shopping.js` as needed.
 
-## Frontend password
+## Shared password
 
-The entry screen uses the password in `src/access.js` (initially `kamillasmat`). Successful entry stores an access version in localStorage, not the entered password. Change the password and increment `accessVersion` to reset remembered logins after deployment. The logout button removes remembered access while preserving the shopping list. Recipe loading starts after the entry screen is unlocked.
+The backend validates `SITE_PASSWORD` and issues a signed 30-day session, remembered in localStorage. There are no separate accounts or admin passwords: everyone with the shared password can edit recipes. Change the Supabase password secret to invalidate sessions. Backend secrets never belong in `VITE_` variables. Logout removes remembered access while preserving the shopping list and favorites.
 
-This is a frontend convenience gate. The public repository, deployed JavaScript, and `meals.json` remain accessible without authentication.
+Recipes and private image uploads are accessed through the password-checked API. The public import backup and Git history retain previously published recipes.
 
 Favorites are saved as recipe IDs in localStorage under `kamilla-favorites-v1`. Heart buttons are available on cards and in recipe details. The favorites filter combines with search and the protein filter; logging out preserves favorites.
 

@@ -6,7 +6,21 @@
     .replace(/ø/g, 'o')
     .replace(/æ/g, 'ae')
 
-export function filterRecipes(recipes, search, proteinOnly, sort) {
+export const mealTypeOptions = [
+  { title: 'Alle måltider', value: null },
+  { title: 'Frokost', value: 0 },
+  { title: 'Lunsj', value: 1 },
+  { title: 'Middag', value: 2 },
+  { title: 'Kvelds', value: 3 }
+]
+
+export function filterRecipes(
+  recipes,
+  search,
+  proteinOnly,
+  sort,
+  mealType = null
+) {
   const terms = normalize(search).trim().split(/\s+/).filter(Boolean)
   const result = recipes.filter((recipe) => {
     const text = normalize(
@@ -18,7 +32,8 @@ export function filterRecipes(recipes, search, proteinOnly, sort) {
     )
     return (
       terms.every((term) => text.includes(term)) &&
-      (!proteinOnly || recipe.nutrients.protein >= 30)
+      (!proteinOnly || recipe.nutrients.protein >= 30) &&
+      (mealType === null || recipe.meal_types?.includes(mealType))
     )
   })
   if (sort === 'name')

@@ -1,16 +1,69 @@
 ﻿<script setup>
 import { computed, onMounted, ref, watch } from 'vue'
-import { filterRecipes, ingredientQuantity } from './recipes'
+import { filterRecipes, ingredientQuantity, mealTypeOptions } from './recipes'
 import ShoppingCart from './components/ShoppingCart.vue'
 import WeekMenu from './components/WeekMenu.vue'
+import RecipeEditor from './components/RecipeEditor.vue'
+import { apiRequest } from './api'
 defineEmits(['logout'])
 const cart = ref(null)
 const selectedAddons = ref([])
 const recipes = ref([])
+const editorOpen = ref(false)
+const editTarget = ref(null)
+const deleteOpen = ref(false)
+const deleting = ref(false)
+const managementError = ref('')
+const message = ref('')
+const messageOpen = ref(false)
+function requestDelete() {
+  managementError.value = ''
+  deleteOpen.value = true
+}
+function openEditor(recipe = null) {
+  editTarget.value = recipe
+  dialog.value = false
+  editorOpen.value = true
+}
+function recipeSaved(recipe) {
+  const index = recipes.value.findIndex((item) => item.id === recipe.id)
+  if (index >= 0) recipes.value[index] = recipe
+  else recipes.value.push(recipe)
+  failedImages.value = new Set(
+    [...failedImages.value].filter((id) => id !== recipe.id)
+  )
+  selected.value = recipe
+  message.value = 'Oppskriften er lagret'
+  messageOpen.value = true
+}
+async function deleteRecipe() {
+  deleting.value = true
+  managementError.value = ''
+  try {
+    await apiRequest(`/recipes/${selected.value.id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ version: selected.value.version })
+    })
+    recipes.value = recipes.value.filter(
+      (recipe) => recipe.id !== selected.value.id
+    )
+    favorites.value = favorites.value.filter((id) => id !== selected.value.id)
+    deleteOpen.value = false
+    dialog.value = false
+    message.value = 'Oppskriften er slettet'
+    messageOpen.value = true
+  } catch (failure) {
+    managementError.value = failure.message
+  } finally {
+    deleting.value = false
+  }
+}
 const loading = ref(true)
 const error = ref(false)
 const search = ref('')
 const proteinOnly = ref(false)
+const mealType = ref(null)
 const favoritesOnly = ref(false)
 const favorites = ref([])
 const favoritesStorageError = ref(false)
@@ -50,7 +103,8 @@ const visibleRecipes = computed(() =>
     recipes.value,
     search.value,
     proteinOnly.value,
-    sort.value
+    sort.value,
+    mealType.value
   ).filter(
     (recipe) => !favoritesOnly.value || favorites.value.includes(recipe.id)
   )
@@ -59,12 +113,14 @@ async function loadRecipes() {
   loading.value = true
   error.value = false
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}meals.json`)
-    if (!response.ok) throw new Error('Could not load recipes')
-    const data = await response.json()
+    const data = await apiRequest('/recipes')
     if (!Array.isArray(data)) throw new Error('Invalid recipe data')
     recipes.value = data
-  } catch {
+    if (selected.value)
+      selected.value =
+        data.find((recipe) => recipe.id === selected.value.id) || null
+  } catch (failure) {
+    managementError.value = failure.message
     error.value = true
   } finally {
     loading.value = false
@@ -79,6 +135,7 @@ function openRecipe(recipe) {
 function resetFilters() {
   search.value = ''
   proteinOnly.value = false
+  mealType.value = null
   favoritesOnly.value = false
   sort.value = 'original'
 }
@@ -115,6 +172,22 @@ onMounted(loadRecipes)
       </header>
       <main class="page">
         <div class="planning-toolbar">
+          <v-btn
+            icon="mdi-refresh"
+            variant="text"
+            size="small"
+            :disabled="loading"
+            aria-label="Last oppskriftene på nytt"
+            title="Last oppskriftene på nytt"
+            @click="loadRecipes"
+          />
+          <v-btn
+            variant="text"
+            prepend-icon="mdi-plus"
+            :disabled="loading || error"
+            @click="openEditor()"
+            >Ny oppskrift</v-btn
+          >
           <WeekMenu
             :recipes="recipes"
             @update-cart="cart.updateWeek($event)"
@@ -137,8 +210,16 @@ onMounted(loadRecipes)
           <div class="filter-row">
             <div class="filter-buttons">
               <v-btn
-                :variant="proteinOnly || favoritesOnly ? 'outlined' : 'flat'"
-                :color="proteinOnly || favoritesOnly ? undefined : 'primary'"
+                :variant="
+                  proteinOnly || favoritesOnly || mealType !== null
+                    ? 'outlined'
+                    : 'flat'
+                "
+                :color="
+                  proteinOnly || favoritesOnly || mealType !== null
+                    ? undefined
+                    : 'primary'
+                "
                 rounded="pill"
                 @click="resetFilters"
                 >Alle oppskrifter</v-btn
@@ -161,16 +242,28 @@ onMounted(loadRecipes)
                 >Favoritter</v-btn
               >
             </div>
-            <v-select
-              v-model="sort"
-              :items="sortOptions"
-              label="Sorter etter"
-              variant="outlined"
-              density="compact"
-              hide-details
-              class="sort-select"
-              rounded="lg"
-            />
+            <div class="filter-selects">
+              <v-select
+                v-model="mealType"
+                :items="mealTypeOptions"
+                label="Måltid"
+                variant="outlined"
+                density="compact"
+                hide-details
+                class="meal-select"
+                rounded="lg"
+              />
+              <v-select
+                v-model="sort"
+                :items="sortOptions"
+                label="Sorter etter"
+                variant="outlined"
+                density="compact"
+                hide-details
+                class="sort-select"
+                rounded="lg"
+              />
+            </div>
           </div>
         </section>
         <p v-if="favoritesStorageError" class="nutrition-note" role="status">
@@ -206,7 +299,7 @@ onMounted(loadRecipes)
           <div v-else-if="error" class="empty-state">
             <v-icon icon="mdi-cloud-alert-outline" size="44" />
             <h3>Oppskriftene kunne ikke lastes</h3>
-            <p>Prøv igjen om et øyeblikk.</p>
+            <p>{{ managementError || 'Prøv igjen om et øyeblikk.' }}</p>
             <v-btn color="primary" @click="loadRecipes">Prøv igjen</v-btn>
           </div>
           <div v-else-if="!visibleRecipes.length" class="empty-state">
@@ -316,6 +409,19 @@ onMounted(loadRecipes)
               @error="imageFailed(selected.id)"
             />
             <h2>{{ selected.name }}</h2>
+            <div class="recipe-management">
+              <v-btn
+                variant="text"
+                prepend-icon="mdi-pencil-outline"
+                @click="openEditor(selected)"
+                >Rediger</v-btn
+              ><v-btn
+                variant="text"
+                prepend-icon="mdi-delete-outline"
+                @click="requestDelete"
+                >Slett</v-btn
+              >
+            </div>
             <v-btn
               class="mb-5"
               color="primary"
@@ -411,6 +517,39 @@ onMounted(loadRecipes)
           </v-card-text></v-card
         ></v-dialog
       >
+      <RecipeEditor
+        v-model="editorOpen"
+        :recipe="editTarget"
+        @saved="recipeSaved"
+      />
+      <v-dialog v-model="deleteOpen" max-width="450" :persistent="deleting"
+        ><v-card rounded="xl"
+          ><v-card-title>Slett oppskrift?</v-card-title
+          ><v-card-text
+            >Vil du slette «{{ selected?.name }}»? Oppskriften og det opplastede
+            bildet fjernes. Dette kan ikke angres.<v-alert
+              v-if="managementError"
+              type="error"
+              variant="tonal"
+              class="mt-4"
+              >{{ managementError }}</v-alert
+            ></v-card-text
+          ><v-card-actions
+            ><v-btn :disabled="deleting" @click="deleteOpen = false"
+              >Avbryt</v-btn
+            ><v-btn
+              color="error"
+              :loading="deleting"
+              :disabled="deleting"
+              @click="deleteRecipe"
+              >Slett oppskrift</v-btn
+            ></v-card-actions
+          ></v-card
+        ></v-dialog
+      >
+      <v-snackbar v-model="messageOpen" :timeout="3500">{{
+        message
+      }}</v-snackbar>
     </v-main></v-app
   >
 </template>
