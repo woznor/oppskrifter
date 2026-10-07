@@ -381,3 +381,15 @@ test('duplication with a replacement image does not leave an unused image copy',
   )
   assert.equal(db.files.size, 2)
 })
+
+test('total recipe duration remains optional and accepts only positive whole minutes', () => {
+  assert.equal(validateRecipe(recipe).duration_minutes, null)
+  assert.equal(
+    validateRecipe({ ...recipe, duration_minutes: 20 }).duration_minutes,
+    20
+  )
+  for (const duration_minutes of [0, -1, 1.5, '20', 10081])
+    assert.throws(() => validateRecipe({ ...recipe, duration_minutes }), {
+      status: 400
+    })
+})

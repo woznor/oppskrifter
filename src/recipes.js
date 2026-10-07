@@ -19,7 +19,10 @@ export function filterRecipes(
   search,
   proteinOnly,
   sort,
-  mealType = null
+  mealType = null,
+  easyOnly = false,
+  quickOnly = false,
+  elaborateOnly = false
 ) {
   const terms = normalize(search).trim().split(/\s+/).filter(Boolean)
   const result = recipes.filter((recipe) => {
@@ -33,7 +36,18 @@ export function filterRecipes(
     return (
       terms.every((term) => text.includes(term)) &&
       (!proteinOnly || recipe.nutrients.protein >= 30) &&
-      (mealType === null || recipe.meal_types?.includes(mealType))
+      (mealType === null || recipe.meal_types?.includes(mealType)) &&
+      (!easyOnly ||
+        (recipe.ingredients.length <= 6 &&
+          recipe.steps.length > 0 &&
+          recipe.steps.length <= 4)) &&
+      (!elaborateOnly ||
+        recipe.ingredients.length > 6 ||
+        recipe.steps.length > 4) &&
+      (!quickOnly ||
+        (Number.isFinite(recipe.duration_minutes) &&
+          recipe.duration_minutes > 0 &&
+          recipe.duration_minutes <= 20))
     )
   })
   if (sort === 'name')

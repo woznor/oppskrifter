@@ -43,3 +43,5 @@ The weekly menu stores one recipe and 1–20 servings for each weekday under `ka
 Shopping list copying defaults to remaining items, with an option to include checked items. If clipboard access is unavailable, a text field supports manual copying.
 
 Recipe duplication opens an editable draft with a copy name and saves it as a new recipe. Uploaded images are copied to a separate Storage object; existing external image URLs are retained. Cancelling the draft creates nothing. Recipe deletion always opens a confirmation dialog before sending the delete request.
+
+Recipe filters: Lite styr selects recipes with at most six ingredients and four nonempty preparation steps. Mye styr selects more than six ingredients or four steps. Fort gjort selects recipes with an explicitly supplied total duration of at most 20 minutes; unknown times are excluded. Total duration can be entered in the recipe editor. Overrask meg opens a random recipe matching all current filters, avoiding the last selection when alternatives exist.

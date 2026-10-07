@@ -66,10 +66,17 @@ export function validateRecipe(value) {
   const nutrients = {}
   for (const field of ['calories', 'protein', 'carbs', 'fat', 'fibre'])
     nutrients[field] = number(value.nutrients?.[field], field)
+  const duration =
+    value.duration_minutes == null
+      ? null
+      : number(value.duration_minutes, 'total tid', 10080)
+  if (duration !== null && (!Number.isInteger(duration) || duration < 1))
+    throw new ApiError(400, 'Oppgi total tid i hele minutter.')
   // Client IDs, uploaded paths and signed image URLs are deliberately excluded.
   return {
     name: text(value.name, 'navn'),
     portions,
+    duration_minutes: duration,
     rating: value.rating == null ? null : number(value.rating, 'vurdering', 5),
     protein_powder: value.protein_powder === true,
     heatable: typeof value.heatable === 'boolean' ? value.heatable : null,

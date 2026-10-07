@@ -234,12 +234,30 @@ footer span {
 .detail-body {
   padding: 24px 30px 35px !important;
 }
+.detail-image-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+.detail-image-button {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  box-shadow: 0 2px 8px #0003;
+}
+.detail-image-empty {
+  display: grid;
+  place-items: center;
+  height: 150px;
+  border-radius: 12px;
+  background: #f0f2ec;
+  color: #6c7e59;
+}
 .detail-image {
   width: 100%;
+  display: block;
   max-height: 280px;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 24px;
 }
 .detail-body h2 {
   font-size: 24px;

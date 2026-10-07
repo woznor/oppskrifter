@@ -58,6 +58,7 @@ watch(
       : {
           name: '',
           portions: 1,
+          duration_minutes: null,
           meal_types: [2],
           rating: null,
           protein_powder: false,
@@ -92,6 +93,10 @@ async function save() {
   try {
     const payload = structuredClone(toRaw(draft.value))
     payload.portions = Number(payload.portions)
+    payload.duration_minutes =
+      payload.duration_minutes == null || payload.duration_minutes === ''
+        ? null
+        : Number(payload.duration_minutes)
     payload.steps = payload.steps.map((step) => step.trim()).filter(Boolean)
     for (const field of ['ingredients', 'protein_addons'])
       payload[field] = payload[field].map((item) => ({
@@ -183,6 +188,26 @@ async function save() {
                 variant="outlined"
               />
             </div>
+            <v-text-field
+              v-model="draft.duration_minutes"
+              label="Total tid (minutter)"
+              hint="Inkluder steking og ventetid. Brukes i Fort gjort (maks 20 minutter)."
+              persistent-hint
+              type="number"
+              min="1"
+              max="10080"
+              step="1"
+              variant="outlined"
+              :rules="[
+                (value) =>
+                  value == null ||
+                  value === '' ||
+                  (Number.isInteger(Number(value)) &&
+                    Number(value) >= 1 &&
+                    Number(value) <= 10080) ||
+                  'Oppgi 1?10080 minutter'
+              ]"
+            />
             <img
               v-if="imagePreview"
               :src="imagePreview"

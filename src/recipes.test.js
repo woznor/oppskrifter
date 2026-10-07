@@ -125,3 +125,69 @@ test('ingredient display uses only grams or decilitres, preserving small volumes
     '5 dl'
   )
 })
+
+test('easy and quick filters combine with search and exclude missing information', () => {
+  const base = {
+    name: 'Pasta',
+    ingredients: [{ name: 'Pasta' }],
+    protein_addons: [],
+    nutrients: { protein: 35 },
+    meal_types: [2],
+    steps: ['Kok']
+  }
+  const sample = [
+    { ...base, id: 1, duration_minutes: 20 },
+    { ...base, id: 2, duration_minutes: 21 },
+    { ...base, id: 3, steps: [] },
+    {
+      ...base,
+      id: 4,
+      duration_minutes: 10,
+      ingredients: Array(7).fill({ name: 'Pasta' })
+    },
+    { ...base, id: 5, duration_minutes: 0 }
+  ]
+  assert.deepEqual(
+    filterRecipes(sample, '', false, 'original', null, true).map((r) => r.id),
+    [1, 2, 5]
+  )
+  assert.deepEqual(
+    filterRecipes(sample, '', false, 'original', null, false, true).map(
+      (r) => r.id
+    ),
+    [1, 4]
+  )
+  assert.deepEqual(
+    filterRecipes(sample, 'pasta', true, 'original', 2, true, true).map(
+      (r) => r.id
+    ),
+    [1]
+  )
+  assert.equal(
+    filterRecipes(sample, 'kylling', false, 'original', null, true, true)
+      .length,
+    0
+  )
+})
+
+test('elaborate recipes need many ingredients or steps and can still be quick', () => {
+  const base = {
+    name: 'Test',
+    ingredients: [{ name: 'Egg' }],
+    protein_addons: [],
+    steps: ['Stek'],
+    nutrients: { protein: 10 },
+    meal_types: [2],
+    duration_minutes: 15
+  }
+  const sample = [
+    base,
+    { ...base, ingredients: Array(7).fill({ name: 'Egg' }) },
+    { ...base, steps: Array(5).fill('Stek') },
+    { ...base, steps: [] }
+  ]
+  assert.deepEqual(
+    filterRecipes(sample, '', false, 'original', null, false, true, true),
+    sample.slice(1, 3)
+  )
+})

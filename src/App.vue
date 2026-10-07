@@ -4,8 +4,12 @@ import { filterRecipes, ingredientQuantity, mealTypeOptions } from './recipes'
 import ShoppingCart from './components/ShoppingCart.vue'
 import WeekMenu from './components/WeekMenu.vue'
 import RecipeEditor from './components/RecipeEditor.vue'
-import { apiRequest } from './api'
+import { apiRequest, saveRecipe } from './api'
 defineEmits(['logout'])
+const imageInput = ref(null)
+const imageUploading = ref(false)
+const imageUploadError = ref('')
+const imageTarget = ref(null)
 const cart = ref(null)
 const selectedAddons = ref([])
 const recipes = ref([])
@@ -18,6 +22,41 @@ const deleting = ref(false)
 const managementError = ref('')
 const message = ref('')
 const messageOpen = ref(false)
+function chooseImage() {
+  if (imageUploading.value || !selected.value) return
+  imageTarget.value = JSON.parse(JSON.stringify(selected.value))
+  imageInput.value.click()
+}
+async function replaceImage(event) {
+  const file = event.target.files?.[0]
+  event.target.value = ''
+  if (!file || imageUploading.value || !imageTarget.value) return
+  const target = imageTarget.value
+  imageUploadError.value = ''
+  if (
+    !['image/jpeg', 'image/png', 'image/webp'].includes(file.type) ||
+    file.size > 6 * 1024 * 1024
+  ) {
+    imageUploadError.value = 'Velg et JPEG-, PNG- eller WebP-bilde under 6 MB.'
+    return
+  }
+  imageUploading.value = true
+  try {
+    const saved = await saveRecipe(target, file, false)
+    const index = recipes.value.findIndex((recipe) => recipe.id === saved.id)
+    if (index >= 0) recipes.value[index] = saved
+    if (selected.value?.id === saved.id) selected.value = saved
+    failedImages.value = new Set(
+      [...failedImages.value].filter((id) => id !== saved.id)
+    )
+    message.value = 'Bildet er oppdatert'
+    messageOpen.value = true
+  } catch (failure) {
+    imageUploadError.value = failure.message
+  } finally {
+    imageUploading.value = false
+  }
+}
 function requestDelete() {
   if (!selected.value) return
   deleteTarget.value = selected.value
@@ -68,6 +107,9 @@ const loading = ref(true)
 const error = ref(false)
 const search = ref('')
 const proteinOnly = ref(false)
+const easyOnly = ref(false)
+const elaborateOnly = ref(false)
+const quickOnly = ref(false)
 const mealType = ref(null)
 const favoritesOnly = ref(false)
 const favorites = ref([])
@@ -109,7 +151,10 @@ const visibleRecipes = computed(() =>
     search.value,
     proteinOnly.value,
     sort.value,
-    mealType.value
+    mealType.value,
+    easyOnly.value,
+    quickOnly.value,
+    elaborateOnly.value
   ).filter(
     (recipe) => !favoritesOnly.value || favorites.value.includes(recipe.id)
   )
@@ -132,14 +177,35 @@ async function loadRecipes() {
   }
 }
 function openRecipe(recipe) {
+  imageUploadError.value = ''
   selectedAddons.value = []
   selected.value = recipe
   servings.value = recipe.portions
   dialog.value = true
 }
+function toggleEasy() {
+  easyOnly.value = !easyOnly.value
+  elaborateOnly.value = false
+}
+function toggleElaborate() {
+  elaborateOnly.value = !elaborateOnly.value
+  easyOnly.value = false
+}
+function surpriseMe() {
+  const candidates = visibleRecipes.value
+  if (!candidates.length) return
+  const alternatives = candidates.filter(
+    (recipe) => recipe.id !== selected.value?.id
+  )
+  const choices = alternatives.length ? alternatives : candidates
+  openRecipe(choices[Math.floor(Math.random() * choices.length)])
+}
 function resetFilters() {
   search.value = ''
   proteinOnly.value = false
+  easyOnly.value = false
+  elaborateOnly.value = false
+  quickOnly.value = false
   mealType.value = null
   favoritesOnly.value = false
   sort.value = 'original'
@@ -216,12 +282,22 @@ onMounted(loadRecipes)
             <div class="filter-buttons">
               <v-btn
                 :variant="
-                  proteinOnly || favoritesOnly || mealType !== null
+                  proteinOnly ||
+                  favoritesOnly ||
+                  easyOnly ||
+                  elaborateOnly ||
+                  quickOnly ||
+                  mealType !== null
                     ? 'outlined'
                     : 'flat'
                 "
                 :color="
-                  proteinOnly || favoritesOnly || mealType !== null
+                  proteinOnly ||
+                  favoritesOnly ||
+                  easyOnly ||
+                  elaborateOnly ||
+                  quickOnly ||
+                  mealType !== null
                     ? undefined
                     : 'primary'
                 "
@@ -245,6 +321,44 @@ onMounted(loadRecipes)
                 rounded="pill"
                 @click="favoritesOnly = !favoritesOnly"
                 >Favoritter</v-btn
+              >
+              <v-btn
+                :variant="easyOnly ? 'flat' : 'outlined'"
+                :color="easyOnly ? 'primary' : undefined"
+                :aria-pressed="easyOnly"
+                title="Maks seks ingredienser og fire steg"
+                prepend-icon="mdi-sofa-outline"
+                rounded="pill"
+                @click="toggleEasy"
+                >Lite styr</v-btn
+              >
+              <v-btn
+                :variant="elaborateOnly ? 'flat' : 'outlined'"
+                :color="elaborateOnly ? 'primary' : undefined"
+                :aria-pressed="elaborateOnly"
+                title="Flere enn seks ingredienser eller fire steg"
+                prepend-icon="mdi-chef-hat"
+                rounded="pill"
+                @click="toggleElaborate"
+                >Mye styr</v-btn
+              >
+              <v-btn
+                :variant="quickOnly ? 'flat' : 'outlined'"
+                :color="quickOnly ? 'primary' : undefined"
+                :aria-pressed="quickOnly"
+                title="Maks 20 minutter"
+                prepend-icon="mdi-lightning-bolt-outline"
+                rounded="pill"
+                @click="quickOnly = !quickOnly"
+                >Fort gjort</v-btn
+              >
+              <v-btn
+                variant="outlined"
+                prepend-icon="mdi-dice-multiple-outline"
+                rounded="pill"
+                :disabled="loading || error || !visibleRecipes.length"
+                @click="surpriseMe"
+                >Overrask meg</v-btn
               >
             </div>
             <div class="filter-selects">
@@ -271,6 +385,22 @@ onMounted(loadRecipes)
             </div>
           </div>
         </section>
+        <p
+          v-if="easyOnly || elaborateOnly || quickOnly"
+          class="nutrition-note"
+          role="status"
+        >
+          <span v-if="easyOnly"
+            >Lite styr: maks seks ingredienser og fire steg.
+          </span>
+          <span v-if="elaborateOnly"
+            >Mye styr: flere enn seks ingredienser eller fire steg.
+          </span>
+          <span v-if="quickOnly"
+            >Fort gjort: maks 20 minutter. Oppskrifter uten oppgitt tid vises
+            ikke; legg inn total tid under Rediger.</span
+          >
+        </p>
         <p v-if="favoritesStorageError" class="nutrition-note" role="status">
           Favorittene kan ikke lagres i denne nettleseren akkurat nå.
         </p>
@@ -284,7 +414,12 @@ onMounted(loadRecipes)
               {{
                 favoritesOnly
                   ? 'Mine favoritter'
-                  : search || proteinOnly
+                  : search ||
+                      proteinOnly ||
+                      easyOnly ||
+                      elaborateOnly ||
+                      quickOnly ||
+                      mealType !== null
                     ? 'Dine treff'
                     : 'Oppskriftene mine'
               }}
@@ -406,28 +541,68 @@ onMounted(loadRecipes)
             </div>
           </div>
           <v-card-text class="detail-body">
-            <img
-              v-if="selected.image && !failedImages.has(selected.id)"
-              class="detail-image"
-              :src="selected.image"
-              :alt="selected.name"
-              @error="imageFailed(selected.id)"
+            <div class="detail-image-container">
+              <img
+                v-if="selected.image && !failedImages.has(selected.id)"
+                class="detail-image"
+                :src="selected.image"
+                :alt="selected.name"
+                @error="imageFailed(selected.id)"
+              />
+              <div v-else class="detail-image-empty">
+                <v-icon icon="mdi-image-outline" size="40" />
+              </div>
+              <v-btn
+                class="detail-image-button"
+                color="white"
+                variant="flat"
+                size="small"
+                rounded="pill"
+                prepend-icon="mdi-image-edit-outline"
+                :loading="imageUploading"
+                :disabled="imageUploading"
+                @click="chooseImage"
+                >{{ selected.image ? 'Bytt bilde' : 'Legg til bilde' }}</v-btn
+              >
+            </div>
+            <input
+              ref="imageInput"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              hidden
+              @change="replaceImage"
             />
+            <v-alert
+              v-if="imageUploadError"
+              type="error"
+              variant="tonal"
+              class="mb-4"
+              role="alert"
+            >
+              {{ imageUploadError }}
+            </v-alert>
             <h2>{{ selected.name }}</h2>
+            <p v-if="selected.duration_minutes" class="nutrition-note">
+              <v-icon icon="mdi-clock-outline" size="18" />
+              {{ selected.duration_minutes }} minutter totalt
+            </p>
             <div class="recipe-management">
               <v-btn
                 variant="text"
                 prepend-icon="mdi-pencil-outline"
+                :disabled="imageUploading"
                 @click="openEditor(selected)"
                 >Rediger</v-btn
               ><v-btn
                 variant="text"
                 prepend-icon="mdi-content-copy"
+                :disabled="imageUploading"
                 @click="openEditor(selected, true)"
                 >Dupliser</v-btn
               ><v-btn
                 variant="text"
                 prepend-icon="mdi-delete-outline"
+                :disabled="imageUploading"
                 @click="requestDelete"
                 >Slett</v-btn
               >
