@@ -2550,5 +2550,2190 @@
       "fat": 15,
       "fibre": 6
     }
+  },
+  {
+    "id": 36,
+    "name": "Sprø kyllingnuggets med bakte grønnsaker",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-food-drumstick-outline",
+    "image": null,
+    "steps": [
+      "Sett ovnen på 210 grader.",
+      "Skrell potet, kålrot og gulrot og skjær dem i staver. Legg dem på et bakepapir og dryss over salt og pepper. Stekes i ovnen i ca. 20 minutter. Snu underveis.",
+      "Skjær kyllingen i biter. Ha et egg i en skål og pisk med en gaffel. Ha litt mel i en annen skål og griljermel blandet med tacokrydder i en tredje. Bruk hjemmelaget tacokrydder hvis du har det.",
+      "Vend kyllingbitene først i mel, så i egg, så i griljermel. Legg dem på stekebrettet sammen med poteter og grønnsaker og la dem steke i 15 minutter til de er sprø.",
+      "Ha kesam i en skål og klem i sitronsaft, smak til med urter (f.eks. dill) og salt."
+    ],
+    "ingredients": [
+      {
+        "name": "Kyllingfilet",
+        "amount": 110,
+        "unit": "g",
+        "grams": 110
+      },
+      {
+        "name": "Egg",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 55
+      },
+      {
+        "name": "Griljermel",
+        "amount": 4,
+        "unit": "ss",
+        "grams": 32
+      },
+      {
+        "name": "Taco kryddermix",
+        "amount": null,
+        "unit": null,
+        "grams": 7
+      },
+      {
+        "name": "Hvetemel",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 27
+      },
+      {
+        "name": "Potet",
+        "amount": 1,
+        "unit": "middels stor",
+        "grams": 65
+      },
+      {
+        "name": "Gulrot",
+        "amount": 0.5,
+        "unit": "middels stor",
+        "grams": 40
+      },
+      {
+        "name": "Kålrot, kålrabi",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 55
+      },
+      {
+        "name": "Mager kesam",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 36
+      },
+      {
+        "name": "Sitron (saften)",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 30
+      },
+      {
+        "name": "Romanosalat (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 10
+      },
+      {
+        "name": "Dill (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 5
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 55,
+      "carbs": 48,
+      "fat": 12,
+      "fibre": 9
+    }
+  },
+  {
+    "id": 37,
+    "name": "Stekt ris med kylling, grønnsaker og egg",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-rice",
+    "image": null,
+    "steps": [
+      "Kok opp ris.",
+      "Skjær kylling i biter og kutt opp grønnsaker.",
+      "Stek kyllingen og krydre med f.eks. salt og pepper. Sett så til side.",
+      "Fres grønnsaker, og tilsett presset hvitløk og finhakket chili.",
+      "Bland inn kyllingen og ris. Skyv alt til en side i stekepannen. Knekk så oppi egg og rør forsiktig til det stivner.",
+      "Rør deretter eggeblandingen sammen med resten. Smak til med soyasaus, f.eks. salt og pepper."
+    ],
+    "ingredients": [
+      {
+        "name": "Kyllingfilet",
+        "amount": 140,
+        "unit": "g",
+        "grams": 140
+      },
+      {
+        "name": "Egg",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 55
+      },
+      {
+        "name": "Ris",
+        "amount": 0.75,
+        "unit": "dl",
+        "grams": 60
+      },
+      {
+        "name": "Vårløk",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 19
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 0.5,
+        "unit": "fedd",
+        "grams": 1
+      },
+      {
+        "name": "Chili, rød",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 6
+      },
+      {
+        "name": "Soyasaus",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 39
+      },
+      {
+        "name": "Erter, fryst",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 30
+      },
+      {
+        "name": "Gulrot",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 40
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 57,
+      "carbs": 48,
+      "fat": 11,
+      "fibre": 6
+    }
+  },
+  {
+    "id": 38,
+    "name": "Sticky mango kyllingbowl",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-bowl-mix-outline",
+    "image": null,
+    "steps": [
+      "Marinade: Bland sammen 1 ss mangochutney, 1 ss yoghurt, saften fra halve sitronen, 2 pressede hvitløksfedd, karri og chilipulver. Smak til med salt og pepper ved behov.",
+      "Ha marinaden over kyllingen og la stå i minimum 20 minutter eller over natten.",
+      "Deretter steker du kyllingen på en stekepanne eller i airfryer på 200 grader i 12–15 minutter (snu etter halvparten av tiden er gått).",
+      "Dressing/raita: Bland sammen agurk, resten av yoghurten, 1 presset hvitløksfedd, saften fra en halv sitron, 1 ss mangochutney og frisk mynte (valgfri). Smak til med salt og pepper ved behov.",
+      "Til slutt lager du en salat av kikerter, rødløk, cherrytomat, granateple og hakket persille. Server sammen med kylling og raita."
+    ],
+    "ingredients": [
+      {
+        "name": "Kyllingfilet",
+        "amount": 100,
+        "unit": "g",
+        "grams": 100
+      },
+      {
+        "name": "Mango chutney",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 25
+      },
+      {
+        "name": "Gresk yoghurt",
+        "amount": 1.7,
+        "unit": "dl",
+        "grams": 170
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 3,
+        "unit": "fedd",
+        "grams": 8
+      },
+      {
+        "name": "Karri",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 5
+      },
+      {
+        "name": "Chilipulver",
+        "amount": 0.5,
+        "unit": "ts",
+        "grams": 2
+      },
+      {
+        "name": "Agurk",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 100
+      },
+      {
+        "name": "Kikerter",
+        "amount": 0.6,
+        "unit": "dl",
+        "grams": 48
+      },
+      {
+        "name": "Rødløk",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 28
+      },
+      {
+        "name": "Cherrytomat",
+        "amount": 2,
+        "unit": "stk",
+        "grams": 30
+      },
+      {
+        "name": "Granateple",
+        "amount": 0.25,
+        "unit": "dl",
+        "grams": 15
+      },
+      {
+        "name": "Persille",
+        "amount": 0.5,
+        "unit": "ss",
+        "grams": 5
+      },
+      {
+        "name": "Sitron",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 50
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 55,
+      "carbs": 48,
+      "fat": 10,
+      "fibre": 13
+    }
+  },
+  {
+    "id": 39,
+    "name": "Superenkel kyllinggryte med digg salat",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pot-steam-outline",
+    "image": null,
+    "steps": [
+      "Stek kylling med salt og pepper. Smak til med ingefær (fersk, malt eller paste), hvitløkskrydder, røkt paprikakrydder, chili og basilikum. Ha i Philadelphia light, melk og ketchup/tomatpuré. Kok opp til du får en deilig saus.",
+      "Rør inn 1 neve spinat og oppskåret paprika etter at du har skrudd av platen.",
+      "Lag salat av finkuttet agurk, tomat, sitronsaft, fetaost, avokado, grønn salat og frisk koriander (kan sløyfes). Spises med valgfri karbohydratkilde, for eksempel ristet brød, ris, potet eller lignende."
+    ],
+    "ingredients": [
+      {
+        "name": "Kyllingfilet",
+        "amount": 150,
+        "unit": "g",
+        "grams": 150
+      },
+      {
+        "name": "Philadelphia light kremost",
+        "amount": 1,
+        "unit": "ss",
+        "grams": 15
+      },
+      {
+        "name": "Avokado",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 32
+      },
+      {
+        "name": "Fetaost",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 30
+      },
+      {
+        "name": "Lettmelk, 0,7 % fett, økologisk",
+        "amount": 0.8,
+        "unit": "dl",
+        "grams": 80
+      },
+      {
+        "name": "Ketchup uten sukker",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 40
+      },
+      {
+        "name": "Grovt brød",
+        "amount": 1,
+        "unit": "skive",
+        "grams": 40
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 31,
+      "carbs": 48,
+      "fat": 20,
+      "fibre": 3
+    }
+  },
+  {
+    "id": 40,
+    "name": "Svinewok med cashewnøtter og banan",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-bowl-mix-outline",
+    "image": null,
+    "steps": [
+      "Kok risen etter anvisningen på pakken.",
+      "Skjær kjøttet i strimler. Stek kjøttet og finhakket hvitløk i stekepanne. Krydre kjøttet med f.eks. spisskummen, tandoorikrydder og chilikrydder.",
+      "Ha oppi brokkoli, gulrot og hermetisk minimais.",
+      "Mot slutten av steketiden har du oppi skivet banan og hakkede cashewnøtter.",
+      "Server wok med ris."
+    ],
+    "ingredients": [
+      {
+        "name": "Svin, ytrefilet",
+        "amount": 150,
+        "unit": "g",
+        "grams": 150
+      },
+      {
+        "name": "Ris",
+        "amount": 0.7,
+        "unit": "dl",
+        "grams": 55
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 0.5,
+        "unit": "fedd",
+        "grams": 1
+      },
+      {
+        "name": "Brokkoli",
+        "amount": 3,
+        "unit": "buketter",
+        "grams": 75
+      },
+      {
+        "name": "Gulrot",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Minimais, hermetisk",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 70
+      },
+      {
+        "name": "Cashewnøtter",
+        "amount": 10,
+        "unit": "stk",
+        "grams": 10
+      },
+      {
+        "name": "Banan",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 60
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 60,
+      "carbs": 48,
+      "fat": 9,
+      "fibre": 9
+    }
+  },
+  {
+    "id": 41,
+    "name": "Tacograteng",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pot-steam-outline",
+    "image": null,
+    "steps": [
+      "Forvarm ovnen til 225 grader.",
+      "Stek karbonadedeigen. Finhakk løken og ha den sammen med karbonadedeigen når den nærmer seg ferdigstekt, og tilsett tacokrydder og vann.",
+      "Etter noen minutter kan du tilsette avskylte kidneybønner, mais, paprika og tacosaus.",
+      "Fordel så alt i en ildfast form, strø over ost og gratiner i ovnen i 10–15 minutter.",
+      "Server tacogratengen med salat, cherrytomater og lettrømme."
+    ],
+    "ingredients": [
+      {
+        "name": "Karbonadedeig",
+        "amount": 120,
+        "unit": "g",
+        "grams": 120
+      },
+      {
+        "name": "Løk",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Taco kryddermix",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 16
+      },
+      {
+        "name": "Kidneybønner, røde, hermetiske",
+        "amount": 4,
+        "unit": "ss",
+        "grams": 72
+      },
+      {
+        "name": "Mais, hermetisk",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 45
+      },
+      {
+        "name": "Tacosaus",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 58
+      },
+      {
+        "name": "Hvitost",
+        "amount": 3,
+        "unit": "skiver",
+        "grams": 39
+      },
+      {
+        "name": "Lettrømme, 10 % fett",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 36
+      },
+      {
+        "name": "Isbergsalat, issalat",
+        "amount": null,
+        "unit": null,
+        "grams": 100
+      },
+      {
+        "name": "Cherrytomat",
+        "amount": 5,
+        "unit": "stk",
+        "grams": 75
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 31,
+      "carbs": 48,
+      "fat": 22,
+      "fibre": 12
+    }
+  },
+  {
+    "id": 42,
+    "name": "Tacograteng med pasta",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pot-steam-outline",
+    "image": null,
+    "steps": [
+      "Kok pasta som anvist på pakken.",
+      "Stek karbonadedeig med litt tacokrydder.",
+      "Kutt opp paprika og åpne en boks mais (ta så mye paprika du vil og en liten dose mais).",
+      "Lag saus av crème fraîche og salsasaus.",
+      "Legg så pasta, grønnsaker, kjøtt og sausen i en ildfast form og bland godt.",
+      "Topp med litt revet lett hvitost.",
+      "Gratiner i ovnen på 200 grader i ca. 10–15 minutter.",
+      "Server med en god salat til."
+    ],
+    "ingredients": [
+      {
+        "name": "Pasta",
+        "amount": 1.2,
+        "unit": "dl",
+        "grams": 36
+      },
+      {
+        "name": "Karbonadedeig",
+        "amount": 130,
+        "unit": "g",
+        "grams": 130
+      },
+      {
+        "name": "Salsasaus",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 34
+      },
+      {
+        "name": "Hvitost, lett 16 % fett",
+        "amount": 3,
+        "unit": "skiver",
+        "grams": 39
+      },
+      {
+        "name": "Mais",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 35
+      },
+      {
+        "name": "Lett crème fraîche, 17 % fett",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 54
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 33,
+      "carbs": 48,
+      "fat": 23,
+      "fibre": 3
+    }
+  },
+  {
+    "id": 43,
+    "name": "Søtpotet burger bowl",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-bowl-mix-outline",
+    "image": null,
+    "steps": [
+      "Skjær opp søtpotet i terninger og stek i airfryer eller stekeovn til gjennomstekt.",
+      "Stek karbonadedeigen og tilsett ønsket krydder, strø over ost helt til slutt.",
+      "Skjær opp salat og grønnsaker du måtte ønske.",
+      "Ha alt sammen over i en skål/tallerken og bruk 30 kalorier til ønsket type dressing."
+    ],
+    "ingredients": [
+      {
+        "name": "Søtpotet",
+        "amount": 180,
+        "unit": "g",
+        "grams": 180
+      },
+      {
+        "name": "Karbonadedeig",
+        "amount": 160,
+        "unit": "g",
+        "grams": 160
+      },
+      {
+        "name": "Isbergsalat, issalat (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 10
+      },
+      {
+        "name": "Tomat (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 10
+      },
+      {
+        "name": "Rødløk (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 10
+      },
+      {
+        "name": "Agurker, syltede",
+        "amount": 4,
+        "unit": "skiver",
+        "grams": 20
+      },
+      {
+        "name": "Saus/dressing (30 kalorier per porsjon)",
+        "amount": 1,
+        "unit": "porsjon",
+        "grams": 1
+      },
+      {
+        "name": "Hvitost",
+        "amount": 3,
+        "unit": "skiver",
+        "grams": 39
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 32,
+      "carbs": 48,
+      "fat": 19,
+      "fibre": 6
+    }
+  },
+  {
+    "id": 44,
+    "name": "Søtpotetlasagne",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pot-steam-outline",
+    "image": null,
+    "steps": [
+      "Stek karbonadedeig med løk og tilsett hakkede tomater, tomatpuré og ønsket krydder. For eksempel salt, hvitløk, chili og oregano.",
+      "Kutt så søtpotet opp i tynne og små skiver.",
+      "Når karbonadedeigen er ferdigstekt, legger du lagvis søtpotet, kjøttsaus og cottage cheese i en ildfast form.",
+      "Topp med revet ost og stek på 185 grader i ca. 25–30 minutter (kommer an på hvor store søtpotetbitene er).",
+      "Server med salatblader."
+    ],
+    "ingredients": [
+      {
+        "name": "Karbonadedeig",
+        "amount": 140,
+        "unit": "g",
+        "grams": 140
+      },
+      {
+        "name": "Løk",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Hakkede tomater, hermetisk",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 100
+      },
+      {
+        "name": "Tomatpuré",
+        "amount": 0.5,
+        "unit": "ss",
+        "grams": 9
+      },
+      {
+        "name": "Søtpotet",
+        "amount": 250,
+        "unit": "g",
+        "grams": 250
+      },
+      {
+        "name": "Mager cottage cheese",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 48
+      },
+      {
+        "name": "Revet hvitost",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 20
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 51,
+      "carbs": 48,
+      "fat": 14,
+      "fibre": 9
+    }
+  },
+  {
+    "id": 45,
+    "name": "Speltlomper med BBQ-kylling",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-taco",
+    "image": null,
+    "steps": [
+      "Varm opp stekeovnen til 180 grader.",
+      "Heng speltlompene over to riller på en rist og stek dem midt i ovnen til de er gylne.",
+      "Hvis speltlompene ikke er stive når du tar dem ut, lar du dem avkjøle seg litt før servering. Speltlompene kan eventuelt sprayes med litt pam-spray for å få dem ekstra crispy. De kan også krydres med f.eks. salt eller paprikakrydder før steking.",
+      "Stek kyllingfilet på høy varme i 1–2 minutter på hver side.",
+      "Skru ned varmen og sett lokk på stekepanna. La stå i 15–17 minutter avhengig av størrelsen på fileten (snu fileten halvveis inn i steketiden).",
+      "Når kyllingfileten er gjennomstekt river du den opp med to gafler og vender den inn i BBQ-sausen.",
+      "Fyll speltlompeskjellene med BBQ-kylling, salat, paprika og tomat."
+    ],
+    "ingredients": [
+      {
+        "name": "Speltlomper",
+        "amount": 3,
+        "unit": "stk",
+        "grams": 99
+      },
+      {
+        "name": "Kyllingfilet",
+        "amount": 170,
+        "unit": "g",
+        "grams": 170
+      },
+      {
+        "name": "Bladsalat",
+        "amount": null,
+        "unit": null,
+        "grams": 150
+      },
+      {
+        "name": "Barbecue Sauce",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 51
+      },
+      {
+        "name": "Paprika, rød",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 140
+      },
+      {
+        "name": "Tomat",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 95
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 53,
+      "carbs": 48,
+      "fat": 5,
+      "fibre": 9
+    }
+  },
+  {
+    "id": 46,
+    "name": "Spicy fiskegryte",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pot-steam-outline",
+    "image": null,
+    "steps": [
+      "Kutt opp løk og hvitløk og fres i pannen.",
+      "Tilsett kokosmelk og hakkede tomater og la det koke opp.",
+      "Tilsett så grønnsakene og la det putre litt før du til slutt tilsetter torsken.",
+      "La det så putre/trekke i ca. 10–15 minutter, og smak til med krydder (f.eks. salt, pepper, gurkemeie) og chili.",
+      "Server med ris."
+    ],
+    "ingredients": [
+      {
+        "name": "Torsk",
+        "amount": 200,
+        "unit": "g",
+        "grams": 200
+      },
+      {
+        "name": "Gulrot",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Løk",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Paprika, rød",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 1,
+        "unit": "fedd",
+        "grams": 3
+      },
+      {
+        "name": "Sukkererter",
+        "amount": 10,
+        "unit": "stk",
+        "grams": 35
+      },
+      {
+        "name": "Hakkede tomater, hermetisk",
+        "amount": 0.25,
+        "unit": "pakke",
+        "grams": 100
+      },
+      {
+        "name": "Kokosmelk lett",
+        "amount": 1.2,
+        "unit": "dl",
+        "grams": 120
+      },
+      {
+        "name": "Ris",
+        "amount": 0.7,
+        "unit": "dl",
+        "grams": 56
+      },
+      {
+        "name": "Chili, rød",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 3
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 55,
+      "carbs": 48,
+      "fat": 13,
+      "fibre": 8
+    }
+  },
+  {
+    "id": 47,
+    "name": "Sprø fiskepinner med potetmos",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-fish",
+    "image": null,
+    "steps": [
+      "Sett ovnen på 210 grader.",
+      "Skrell potet og kok dem i en halvtime. Skjær fisken i biter.",
+      "Ha et egg i en skål og pisk med en gaffel. Ha litt mel i en annen skål og griljermel blandet med tacokrydder i en tredje. Bruk hjemmelaget tacokrydder hvis du har det. Vend fiskebitene først i mel, så i egg, så i griljermel. Legg dem på et stekebrett og la dem steke i 15–20 minutter til de er sprø.",
+      "Riv gulrot og skjær rødkål fint, ha det i en bolle og skvis over sitronsaft og Sukrin Gold. Mos potet og smak til med salt og pepper. Ha eventuelt i en skvett melk."
+    ],
+    "ingredients": [
+      {
+        "name": "Torsk",
+        "amount": 170,
+        "unit": "g",
+        "grams": 170
+      },
+      {
+        "name": "Egg",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 55
+      },
+      {
+        "name": "Griljermel",
+        "amount": 4,
+        "unit": "ss",
+        "grams": 32
+      },
+      {
+        "name": "Taco kryddermix",
+        "amount": null,
+        "unit": null,
+        "grams": 7
+      },
+      {
+        "name": "Hvetemel",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 27
+      },
+      {
+        "name": "Potet",
+        "amount": 1,
+        "unit": "middels stor",
+        "grams": 65
+      },
+      {
+        "name": "Gulrot",
+        "amount": 1,
+        "unit": "middels stor",
+        "grams": 80
+      },
+      {
+        "name": "Rødkål",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 17
+      },
+      {
+        "name": "Sitron (saften)",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 30
+      },
+      {
+        "name": "Sukrin Gold",
+        "amount": 1,
+        "unit": "ss",
+        "grams": 13
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 54,
+      "carbs": 48,
+      "fat": 11,
+      "fibre": 9
+    }
+  },
+  {
+    "id": 48,
+    "name": "Rød laksepasta",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pasta",
+    "image": null,
+    "steps": [
+      "Stek fisk i olje med salt og pepper. Ha over tomatsuppe, vann, kokosmelk og hakket tomat. Rør inn fersk pasta (anbefaler eggepasta). Rør inn cottage cheese til slutt. Server og nyt!",
+      "Server gjerne med litt hvitløksbrød, kjøpt eller hjemmelaget av kesam, hvetemel og bakepulver.",
+      "Tips: Kjøp fisk i terninger, det finnes poser som har 50/50 torsk og laks.",
+      "Tips: Tomatsuppepulver og vann kan selvsagt byttes mot tomatpuré og ønsket krydder, f.eks. buljong og oregano."
+    ],
+    "ingredients": [
+      {
+        "name": "Vann, drikkevann",
+        "amount": 2.5,
+        "unit": "dl",
+        "grams": 250
+      },
+      {
+        "name": "Pasta, naturell, fersk, kokt",
+        "amount": 70,
+        "unit": "g",
+        "grams": 70
+      },
+      {
+        "name": "Cottage cheese",
+        "amount": 1,
+        "unit": "ss",
+        "grams": 16
+      },
+      {
+        "name": "Tomat",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 95
+      },
+      {
+        "name": "Kokosmelk",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 22
+      },
+      {
+        "name": "Olivenolje",
+        "amount": 0.5,
+        "unit": "ss",
+        "grams": 5
+      },
+      {
+        "name": "Tomatsuppe, Toro",
+        "amount": 0.25,
+        "unit": "pose",
+        "grams": 23
+      },
+      {
+        "name": "Laks",
+        "amount": 100,
+        "unit": "g",
+        "grams": 100
+      },
+      {
+        "name": "Torsk",
+        "amount": 120,
+        "unit": "g",
+        "grams": 120
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 15,
+      "carbs": 48,
+      "fat": 30,
+      "fibre": 3
+    }
+  },
+  {
+    "id": 49,
+    "name": "Scampi og mangobowl i tortilla",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": null,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-bowl-mix-outline",
+    "image": null,
+    "steps": [
+      "Bland saften av lime, soyasaus, finhakket chili og koriander i en bolle, og ha i scampien. La det marineres i minst 30 minutter.",
+      "Legg en tacolompe i en bolle, med en mindre bolle i midten, så det lages en skål. Stek i airfryer i ca. 10 minutter på 180 grader. Ønsker du ikke dette, så spiser du bare lompa ved siden av.",
+      "Kutt grønnsaker i terninger og fyll det i lompa, sammen med marinert scampi."
+    ],
+    "ingredients": [
+      {
+        "name": "Scampi",
+        "amount": 170,
+        "unit": "g",
+        "grams": 170
+      },
+      {
+        "name": "Mango",
+        "amount": 0.6,
+        "unit": "dl",
+        "grams": 42
+      },
+      {
+        "name": "Agurk",
+        "amount": 8,
+        "unit": "skiver",
+        "grams": 48
+      },
+      {
+        "name": "Paprika, grønn",
+        "amount": 0.3333333333333333,
+        "unit": "stk",
+        "grams": 44
+      },
+      {
+        "name": "Avokado",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 32
+      },
+      {
+        "name": "Soyasaus",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 39
+      },
+      {
+        "name": "Lime (saften)",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 20
+      },
+      {
+        "name": "Chili, rød",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 3
+      },
+      {
+        "name": "Koriander (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 100
+      },
+      {
+        "name": "Tortilla, fullkorn",
+        "amount": 1,
+        "unit": "stor",
+        "grams": 60
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 46,
+      "carbs": 48,
+      "fat": 13,
+      "fibre": 10
+    }
+  },
+  {
+    "id": 50,
+    "name": "Scampi Satay",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-bowl-mix-outline",
+    "image": null,
+    "steps": [
+      "Start med å lage marinaden av hvitløk, chili, karrikrydder, 1 ss peanøttsmør, saften fra 1/2 lime og 1 ss soyasaus.",
+      "Ha scampien i marinaden og la ligge i minimum 15 minutter.",
+      "Salat: Bland sammen rødkål, vårløk, sukkererter og gulrot og tilsett fiskesaus, saften fra den andre limen og honning. Rør sammen.",
+      "Saus: Bland sammen 1/2 ss peanøttsaus, chilisaus (anbefaler sriracha), 1 ss soyasaus, ingefær og saften fra 1/2 lime.",
+      "Legg grillspyd i vann og deretter trer du scampi på og steker i airfryer/stekeovn på 200 grader i ca. 6 minutter."
+    ],
+    "ingredients": [
+      {
+        "name": "Scampi",
+        "amount": 160,
+        "unit": "g",
+        "grams": 160
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 2,
+        "unit": "fedd",
+        "grams": 5
+      },
+      {
+        "name": "Karri",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 5
+      },
+      {
+        "name": "Peanøttsmør",
+        "amount": 1.5,
+        "unit": "ss",
+        "grams": 27
+      },
+      {
+        "name": "Lime",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 20
+      },
+      {
+        "name": "Soyasaus",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 26
+      },
+      {
+        "name": "Rødkål",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 70
+      },
+      {
+        "name": "Gulrot",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 80
+      },
+      {
+        "name": "Vårløk",
+        "amount": 2,
+        "unit": "stk",
+        "grams": 38
+      },
+      {
+        "name": "Sukkererter",
+        "amount": 6,
+        "unit": "stk",
+        "grams": 21
+      },
+      {
+        "name": "Fish sauce, Santa Maria",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 8
+      },
+      {
+        "name": "Honning",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 11
+      },
+      {
+        "name": "Ingefærrot",
+        "amount": 0.5,
+        "unit": "ts",
+        "grams": 5
+      },
+      {
+        "name": "Chili, rød",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 4
+      },
+      {
+        "name": "Sriracha chili sauce",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 5
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 34,
+      "carbs": 48,
+      "fat": 18,
+      "fibre": 11
+    }
+  },
+  {
+    "id": 51,
+    "name": "Scampitaco med chilimajones og mango",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-taco",
+    "image": null,
+    "steps": [
+      "Stek scampi noen minutter på høy varme sammen med chili, hvitløk og ønsket krydder.",
+      "Bland sammen kesam, majones og chilisaus.",
+      "Hakk opp ønsket salat, vårløk og mango.",
+      "Varm små tortillas. Server med scampi, salat, vårløk, mango, koriander, lime, chilimajones og syltet rødløk.",
+      "Hvis du vil sylte rødløk: Bruk 1 del eddik, 2 deler sukker og 3 deler vann. Kok opp blandingen til sukkeret er oppløst. Ha blandingen over i et glass og tilsett rødløk. La avkjøles i kjøleskap. Blandingen holder seg godt i kjøleskap i lang tid, så lag gjerne mer av gangen."
+    ],
+    "ingredients": [
+      {
+        "name": "Scampi",
+        "amount": 160,
+        "unit": "g",
+        "grams": 160
+      },
+      {
+        "name": "Majones, lett, 50 % fett",
+        "amount": 1.3333333333333333,
+        "unit": "ss",
+        "grams": 17
+      },
+      {
+        "name": "Tortilla, maislefse",
+        "amount": 1.5,
+        "unit": "stk",
+        "grams": 60
+      },
+      {
+        "name": "Mango",
+        "amount": 0.7,
+        "unit": "dl",
+        "grams": 50
+      },
+      {
+        "name": "Mager kesam",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 54
+      },
+      {
+        "name": "Chilisaus",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 5
+      },
+      {
+        "name": "Koriander",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 5
+      },
+      {
+        "name": "Lime",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 10
+      },
+      {
+        "name": "Rødløk",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Vårløk",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 20
+      },
+      {
+        "name": "Bladsalat",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 25
+      },
+      {
+        "name": "Chili, rød",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 1
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 1
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 52,
+      "carbs": 48,
+      "fat": 14,
+      "fibre": 6
+    }
+  },
+  {
+    "id": 52,
+    "name": "Shepherds Pie",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pot-steam-outline",
+    "image": null,
+    "steps": [
+      "Sett poteter på kok.",
+      "Stek og krydre karbonadedeigen og løk med f.eks. salt og pepper.",
+      "Mos tomater i en foodprocessor/stavmikser. Hell det over karbonadedeigen og la det putre. Smak til med mer krydder.",
+      "Mos ferdigkokte poteter med en stavmikser og tilsett melk. Smak til med salt og pepper.",
+      "Legg kjøttblandingen i en ildfast form. Smør potetmosen over, og topp med ost og litt rosmarin.",
+      "Stek på 200 grader til osten er gyllen. Server med salat og agurk."
+    ],
+    "ingredients": [
+      {
+        "name": "Karbonadedeig",
+        "amount": 120,
+        "unit": "g",
+        "grams": 120
+      },
+      {
+        "name": "Potet",
+        "amount": 3,
+        "unit": "middels stor",
+        "grams": 195
+      },
+      {
+        "name": "Hvitost",
+        "amount": 3,
+        "unit": "skiver",
+        "grams": 39
+      },
+      {
+        "name": "Lettmelk, 0,5 % fett",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 100
+      },
+      {
+        "name": "Tomat",
+        "amount": 2,
+        "unit": "stk",
+        "grams": 190
+      },
+      {
+        "name": "Løk",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 28
+      },
+      {
+        "name": "Bladsalat",
+        "amount": 3,
+        "unit": "blader",
+        "grams": 120
+      },
+      {
+        "name": "Agurk",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 28
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 45,
+      "carbs": 48,
+      "fat": 18,
+      "fibre": 8
+    }
+  },
+  {
+    "id": 53,
+    "name": "Sitron kylling pasta",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pasta",
+    "image": null,
+    "steps": [
+      "Kok pasta.",
+      "Bank kyllingen litt flat. Krydre med salt, pepper, hvitløkspulver og kyllingkrydder. Stek på middels varme og sett til side når den er ferdig.",
+      "Stek så ferdigkuttet hvitløk og gul løk. Bland inn crème fraîche. Riv litt sitronskall oppi. Bland sitronsaft og vann og hell oppi. Bland inn pastaen og la den putre litt.",
+      "Fordel i ønsket skål. Skjær opp kyllingen i strimler og topp oppå pastablandingen. Topp med litt parmesan."
+    ],
+    "ingredients": [
+      {
+        "name": "Kyllingfilet",
+        "amount": 140,
+        "unit": "g",
+        "grams": 140
+      },
+      {
+        "name": "Pasta",
+        "amount": 1.5,
+        "unit": "dl",
+        "grams": 45
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 1,
+        "unit": "fedd",
+        "grams": 2.5
+      },
+      {
+        "name": "Løk (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 50
+      },
+      {
+        "name": "Sitronsaft, flaske (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 50
+      },
+      {
+        "name": "Sitronskall (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 10
+      },
+      {
+        "name": "Vann, drikkevann",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 100
+      },
+      {
+        "name": "Parmesan, ost",
+        "amount": 15,
+        "unit": "g",
+        "grams": 15
+      },
+      {
+        "name": "Lett crème fraîche, 17 % fett",
+        "amount": 4,
+        "unit": "ss",
+        "grams": 72
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 39,
+      "carbs": 48,
+      "fat": 20,
+      "fibre": 4
+    }
+  },
+  {
+    "id": 54,
+    "name": "Smashburger",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-hamburger",
+    "image": null,
+    "steps": [
+      "Kna sammen karbonadedeig med ønsket krydder, f.eks. salt, pepper, paprika, hvitløk og chili.",
+      "Fordel deigen i to og trykk den ned på tortillalefsene før du steker dem på stekepanna med kjøttsiden ned.",
+      "Når det er godt stekt, snu dem rundt og legg over ost på hver burger. La osten smelte.",
+      "Skjær opp ønsket grønt, salat, løk osv., og legg på toppen. Avslutt med ønsket dressing, anbefaler burgerdressing."
+    ],
+    "ingredients": [
+      {
+        "name": "Karbonadedeig",
+        "amount": 140,
+        "unit": "g",
+        "grams": 140
+      },
+      {
+        "name": "Tortilla, 100 % mais, mini, Old el Paso",
+        "amount": 2,
+        "unit": "stk",
+        "grams": 42
+      },
+      {
+        "name": "Cheddar, gulost",
+        "amount": 2,
+        "unit": "skiver",
+        "grams": 50
+      },
+      {
+        "name": "Saus/dressing",
+        "amount": 1,
+        "unit": "porsjon",
+        "grams": 1
+      },
+      {
+        "name": "Løk",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Isbergsalat, issalat (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 40
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 22,
+      "carbs": 48,
+      "fat": 25,
+      "fibre": 1
+    }
+  },
+  {
+    "id": 55,
+    "name": "Smoky kylling taco",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-taco",
+    "image": null,
+    "steps": [
+      "Bland kyllingen med olje, paprikapulver, cayennepulver, hvitløkspulver, salt, pepper og litt saft fra lime. Bland godt. La blandingen stå i minst 2 timer eller over natten. Ta den marinerte kyllingen ut av kjøleskapet 30 minutter før du skal steke den.",
+      "Ha stekepannen på middels varme og stek kyllingen.",
+      "Til salsaen: Bland sammen mais, avokadoen kuttet opp i små biter, løk, litt saft fra lime og salt. Smak til slik du vil ha den.",
+      "Varm tortillaene i en panne med et tynt lag ost så det smelter. Dette kan eventuelt gjøres i ovnen.",
+      "Kutt opp kyllingen i biter og legg oppå tortillaene. Ta på salsaen du har lagd. Nyt et godt måltid."
+    ],
+    "ingredients": [
+      {
+        "name": "Kyllingfilet",
+        "amount": 160,
+        "unit": "g",
+        "grams": 160
+      },
+      {
+        "name": "Vita Hjertego’ olje",
+        "amount": 0.5,
+        "unit": "ss",
+        "grams": 5
+      },
+      {
+        "name": "Lime (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 3
+      },
+      {
+        "name": "Paprikapulver (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 3
+      },
+      {
+        "name": "Pepper, cayenne, rød (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 2
+      },
+      {
+        "name": "Hvitløkspulver (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 2
+      },
+      {
+        "name": "Salt (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 3
+      },
+      {
+        "name": "Pepper, sort (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 2
+      },
+      {
+        "name": "Mais",
+        "amount": 0.5,
+        "unit": "dl",
+        "grams": 35
+      },
+      {
+        "name": "Avokado",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 60
+      },
+      {
+        "name": "Koriander (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 2
+      },
+      {
+        "name": "Løk (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 10
+      },
+      {
+        "name": "Tortilla, extra thin, large, Old el Paso",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 32
+      },
+      {
+        "name": "Revet hvitost",
+        "amount": 0.25,
+        "unit": "dl",
+        "grams": 10
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 25,
+      "carbs": 48,
+      "fat": 26,
+      "fibre": 6
+    }
+  },
+  {
+    "id": 56,
+    "name": "Proteinpizza med spekeskinke",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pizza",
+    "image": null,
+    "steps": [
+      "Start med å lage deigen ved å mose cottage cheese, hvetemel, bakepulver og salt med en stavmikser.",
+      "Ha deigen utover et bakepapirkledd stekebrett og smør på tomatpuré. Topp med revet ost og stek på 200 grader i 20–25 minutter.",
+      "Topp med spekeskinke og ruccola før servering."
+    ],
+    "ingredients": [
+      {
+        "name": "Mager cottage cheese",
+        "amount": 1.8,
+        "unit": "dl",
+        "grams": 180
+      },
+      {
+        "name": "Hvetemel",
+        "amount": 7,
+        "unit": "ss",
+        "grams": 60
+      },
+      {
+        "name": "Bakepulver",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 5
+      },
+      {
+        "name": "Salt",
+        "amount": 0.5,
+        "unit": "ts",
+        "grams": 5
+      },
+      {
+        "name": "Tomatpuré",
+        "amount": 1,
+        "unit": "ss",
+        "grams": 18
+      },
+      {
+        "name": "Spekeskinke, Grilstad Lev litt lettere",
+        "amount": 4,
+        "unit": "skiver",
+        "grams": 32
+      },
+      {
+        "name": "Revet hvitost",
+        "amount": 0.8,
+        "unit": "dl",
+        "grams": 32
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 43,
+      "carbs": 48,
+      "fat": 15,
+      "fibre": 8
+    }
+  },
+  {
+    "id": 57,
+    "name": "Proteinrik gnocchi med kyllingkjøttdeig, tomat og ricotta",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pasta",
+    "image": null,
+    "steps": [
+      "Stek løk og hvitløk i 1–2 minutter. Tilsett kyllingkjøttdeig og stek til den er gjennomstekt.",
+      "Tilsett hakkede tomater, oregano og paprikapulver. La det småkoke i 5–7 minutter til sausen tykner litt.",
+      "Kok gnocchi etter anvisning på pakken (2–3 minutter). Sil av vannet.",
+      "Vend gnocchi inn i sausen. Rør inn ricotta slik at sausen blir kremet.",
+      "Topp med parmesan og litt fersk basilikum (valgfritt)."
+    ],
+    "ingredients": [
+      {
+        "name": "Gnocchi",
+        "amount": 70,
+        "unit": "g",
+        "grams": 70
+      },
+      {
+        "name": "Kjøttdeig, kylling",
+        "amount": 180,
+        "unit": "g",
+        "grams": 180
+      },
+      {
+        "name": "Løk",
+        "amount": 0.25,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 1,
+        "unit": "fedd",
+        "grams": 2
+      },
+      {
+        "name": "Hakkede tomater, hermetisk",
+        "amount": 1,
+        "unit": "dl",
+        "grams": 100
+      },
+      {
+        "name": "Ricotta, ferskost",
+        "amount": 40,
+        "unit": "g",
+        "grams": 40
+      },
+      {
+        "name": "Parmesan, ost",
+        "amount": 10,
+        "unit": "g",
+        "grams": 10
+      },
+      {
+        "name": "Oregano, tørket",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 3
+      },
+      {
+        "name": "Paprikapulver",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 3
+      },
+      {
+        "name": "Salt (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 2
+      },
+      {
+        "name": "Pepper, sort (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 2
+      },
+      {
+        "name": "Basilikum",
+        "amount": 1,
+        "unit": "håndfull",
+        "grams": 5
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 31,
+      "carbs": 48,
+      "fat": 24,
+      "fibre": 7
+    }
+  },
+  {
+    "id": 58,
+    "name": "Proteinrik libapizza",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-pizza",
+    "image": null,
+    "steps": [
+      "Legg libabrødet på en rist med bakepapir.",
+      "Bland mager kesam med paprika og chilikrydder og smør utover brødet som en pizzasaus.",
+      "Ha på ost og kylling og stek i ovnen på 200 grader til osten er smeltet og du har en fin gyllen farge på brødet."
+    ],
+    "ingredients": [
+      {
+        "name": "Libabrød, grov",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 85
+      },
+      {
+        "name": "Mager kesam",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 36
+      },
+      {
+        "name": "Kyllingfilet",
+        "amount": 130,
+        "unit": "g",
+        "grams": 130
+      },
+      {
+        "name": "Cherrytomat",
+        "amount": 4,
+        "unit": "stk",
+        "grams": 60
+      },
+      {
+        "name": "Hvitost",
+        "amount": 3,
+        "unit": "skiver",
+        "grams": 39
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 44,
+      "carbs": 48,
+      "fat": 15,
+      "fibre": 6
+    }
+  },
+  {
+    "id": 59,
+    "name": "Proteinrike pannekaker",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": true,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-food",
+    "image": null,
+    "steps": [
+      "Ha hvetemel i en bolle. Rør inn melken litt etter litt og bland sammen til en jevn røre. Rør inn egg og kesam.",
+      "La røren svelle i minimum 15 minutter før du steker tynne pannekaker i en varm panne. Bruk litt stekespray eller smør i stekepanna. Pass på at stekepanna er varm nok, og snu pannekaken når det kommer «hull» på toppen.",
+      "Topp med sukkerfritt syltetøy!",
+      "Drikk en proteinshake utenom."
+    ],
+    "ingredients": [
+      {
+        "name": "Egg",
+        "amount": 2,
+        "unit": "stk",
+        "grams": 110
+      },
+      {
+        "name": "Mager kesam",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 50
+      },
+      {
+        "name": "Lettmelk, 1,0 % fett, Tine",
+        "amount": 2.5,
+        "unit": "dl",
+        "grams": 250
+      },
+      {
+        "name": "Hvetemel",
+        "amount": 6,
+        "unit": "ss",
+        "grams": 50
+      },
+      {
+        "name": "Bakepulver",
+        "amount": 1,
+        "unit": "liten ts",
+        "grams": 1
+      },
+      {
+        "name": "Syltetøy uten tilsatt sukker",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 48
+      },
+      {
+        "name": "Proteinpulver",
+        "amount": 0.5,
+        "unit": "måleskje",
+        "grams": 15
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 46,
+      "carbs": 48,
+      "fat": 17,
+      "fibre": 7
+    }
+  },
+  {
+    "id": 60,
+    "name": "Pulled chicken med quinoa",
+    "portions": 1,
+    "rating": null,
+    "protein_powder": false,
+    "heatable": null,
+    "must_be_heated": true,
+    "meal_types": [
+      2
+    ],
+    "category_icon": "mdi-bowl-mix-outline",
+    "image": null,
+    "steps": [
+      "Brun kyllingbrystet i en stekepanne og legg det til siden.",
+      "Finkutt løk og hvitløk, og fres det i panna. Ha oppi krydderne og vann. Legg kyllingen tilbake og sett på lokk. La det surre i ca. 15 minutter.",
+      "Skjær opp gulrot og paprika i små biter og wok dem i ei panne til de er møre.",
+      "Kok quinoa etter anvisning på pakken. Når den er ferdig rører du inn noen blader med spinat.",
+      "Når vannet er kokt bort rundt kyllingen tar du den opp og drar den fra hverandre med to gafler. Sett den så under grillen noen minutter før du serverer.",
+      "Kesam brukes som dressing."
+    ],
+    "ingredients": [
+      {
+        "name": "Kyllingfilet",
+        "amount": 130,
+        "unit": "g",
+        "grams": 130
+      },
+      {
+        "name": "Quinoa",
+        "amount": 5,
+        "unit": "ss",
+        "grams": 55
+      },
+      {
+        "name": "Løk",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 80
+      },
+      {
+        "name": "Hvitløk",
+        "amount": 1,
+        "unit": "fedd",
+        "grams": 2
+      },
+      {
+        "name": "Sukrin Gold",
+        "amount": 2,
+        "unit": "ss",
+        "grams": 26
+      },
+      {
+        "name": "Røkt paprikapulver",
+        "amount": 2,
+        "unit": "ts",
+        "grams": 10
+      },
+      {
+        "name": "Spisskummen",
+        "amount": 1,
+        "unit": "ts",
+        "grams": 5
+      },
+      {
+        "name": "Pepper, cayenne, rød",
+        "amount": 0.5,
+        "unit": "ts",
+        "grams": 3
+      },
+      {
+        "name": "Lime (saften)",
+        "amount": 1,
+        "unit": "stk",
+        "grams": 40
+      },
+      {
+        "name": "Salt (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 3
+      },
+      {
+        "name": "Pepper, sort (ønsket mengde)",
+        "amount": null,
+        "unit": null,
+        "grams": 3
+      },
+      {
+        "name": "Spinat, rå (noen blader)",
+        "amount": null,
+        "unit": null,
+        "grams": 12
+      },
+      {
+        "name": "Gulrot",
+        "amount": 1,
+        "unit": "middels stor",
+        "grams": 80
+      },
+      {
+        "name": "Paprika",
+        "amount": 0.5,
+        "unit": "stk",
+        "grams": 72
+      },
+      {
+        "name": "Mager kesam",
+        "amount": 3,
+        "unit": "ss",
+        "grams": 54
+      }
+    ],
+    "protein_addons": [],
+    "nutrients": {
+      "calories": 530,
+      "protein": 51,
+      "carbs": 48,
+      "fat": 10,
+      "fibre": 19
+    }
   }
 ]
