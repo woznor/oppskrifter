@@ -1237,9 +1237,9 @@
       },
       {
         "name": "Vann, drikkevann",
-        "amount": 2,
-        "unit": "dl",
-        "grams": 0
+        "amount": 200,
+        "unit": "g",
+        "grams": 200
       },
       {
         "name": "Tomat, hakket, tetrapak",

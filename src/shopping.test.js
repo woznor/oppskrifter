@@ -38,12 +38,12 @@ test('mixed unit families use supplied weights instead of guessed densities', ()
   ])
   assert.equal(shoppingQuantity(result[0]), '160 g')
 })
-test('compatible volume units and weight units are converted before summing', () => {
+test('volume and weight quantities sum their supplied gram weights', () => {
   const volume = combine([
     item('Melk', 1, 'dl', 103),
     item('melk', 2, 'ss', 31)
   ])
-  assert.equal(shoppingQuantity(volume[0]), '1,3 dl')
+  assert.equal(shoppingQuantity(volume[0]), '134 g')
   const weight = combine([
     item('Ris', 0.5, 'kg', 500),
     item('ris', 600, 'g', 600)
@@ -101,7 +101,7 @@ test('all recipe ingredients can be aggregated without losing weight', () => {
       (row) =>
         Number.isFinite(row.amount) &&
         Number.isFinite(row.grams) &&
-        ['g', 'dl'].includes(row.unit)
+        row.unit === 'g'
     )
   )
 })
@@ -143,4 +143,12 @@ test('week menu replaces earlier planned dishes while preserving manual addition
   assert.equal(twice.length, 3)
   assert.equal(aggregateIngredients(twice)[0].amount, 330)
   assert.deepEqual(replaceWeekEntries(twice, []), [manual])
+})
+
+test('previously stored volume ingredients and small spoon amounts display and copy as grams', () => {
+  const saved = item('Honning', 0.075, 'dl', 8)
+  assert.equal(shoppingQuantity(saved), '8 g')
+  const combined = combine([saved, item('Honning', 0.5, 'ts', 2)])
+  assert.equal(shoppingQuantity(combined[0]), '10 g')
+  assert.match(shoppingListText(combined), /10 g$/)
 })

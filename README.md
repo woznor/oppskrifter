@@ -26,7 +26,7 @@ The recipe editor supports creating, updating and deleting recipes, plus image u
 
 Open a recipe, choose servings and any optional protein additions, then add it to the shopping list. The list combines ingredients across dishes and is saved in the current browser. Removing a dish recalculates the quantities; purchased items can be checked off.
 
-Ingredient names match regardless of case and spacing, with explicit aliases for known equivalents such as medium potatoes and green pesto. Different product variants remain separate. Compatible units are converted (for example, tablespoons and decilitres to millilitres). When unit families differ, the supplied gram weights are summed without assuming a density. Add further verified aliases in `src/shopping.js` as needed.
+Ingredient names match regardless of case and spacing, with explicit aliases for known equivalents such as medium potatoes and green pesto. Different product variants remain separate. All ingredient quantities display and merge using the supplied gram weights, including existing shopping lists saved in the browser. Recipe editing uses grams only. Add further verified aliases in `src/shopping.js` as needed.
 
 ## Shared password
 

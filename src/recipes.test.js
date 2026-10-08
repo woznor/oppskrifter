@@ -109,20 +109,17 @@ test('meal filters include multi-type recipes and distinguish breakfast code zer
   )
 })
 
-test('ingredient display uses only grams or decilitres, preserving small volumes', () => {
+test('ingredient display uses supplied gram weights for every source unit', () => {
   for (const recipe of recipes)
     for (const ingredient of [...recipe.ingredients, ...recipe.protein_addons])
-      assert.match(
-        ingredientQuantity(ingredient, 1, recipe.portions),
-        / (g|dl)$/
-      )
+      assert.match(ingredientQuantity(ingredient, 1, recipe.portions), / g$/)
   assert.equal(
     ingredientQuantity({ amount: 0.5, unit: 'ts', grams: 2 }, 1, 1),
-    '0,025 dl'
+    '2 g'
   )
   assert.equal(
     ingredientQuantity({ amount: 250, unit: 'ml', grams: 258 }, 2, 1),
-    '5 dl'
+    '516 g'
   )
 })
 

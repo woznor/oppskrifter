@@ -101,12 +101,9 @@ async function save() {
     for (const field of ['ingredients', 'protein_addons'])
       payload[field] = payload[field].map((item) => ({
         name: item.name.trim(),
-        amount:
-          item.amount == null || item.amount === ''
-            ? null
-            : Number(item.amount),
-        unit: item.unit?.trim() || null,
-        grams: Number(item.unit === 'g' ? item.amount : item.grams)
+        amount: Number(item.amount),
+        unit: 'g',
+        grams: Number(item.amount)
       }))
     for (const key of Object.keys(nutrientLabels))
       payload.nutrients[key] = Number(payload.nutrients[key])
@@ -251,25 +248,7 @@ async function save() {
                 />
                 <v-text-field
                   v-model="item.amount"
-                  label="Mengde"
-                  type="number"
-                  min="0"
-                  step="any"
-                  variant="outlined"
-                  density="compact"
-                  :rules="[nonnegative]"
-                />
-                <v-text-field
-                  v-model="item.unit"
-                  label="Enhet"
-                  placeholder="stk, ss, dl …"
-                  variant="outlined"
-                  density="compact"
-                />
-                <v-text-field
-                  v-if="item.unit === 'dl'"
-                  v-model="item.grams"
-                  label="Gram"
+                  label="Mengde (g)"
                   type="number"
                   min="0"
                   step="any"

@@ -1,4 +1,4 @@
-import { formatAmount, ingredientMeasure } from './recipes.js'
+import { formatAmount } from './recipes.js'
 
 const clean = (value) =>
   String(value ?? '')
@@ -49,35 +49,23 @@ export function aggregateIngredients(entries) {
         groups.set(key, {
           key,
           name: aliases[clean(item.name)] || item.name,
-          grams: 0,
-          measures: new Map()
+          grams: 0
         })
       const group = groups.get(key)
       group.grams += item.grams
-      const { unit, amount } = ingredientMeasure(item)
-      group.measures.set(unit, (group.measures.get(unit) || 0) + amount)
     }
   }
   return [...groups.values()]
-    .map((group) => {
-      // All source ingredients have weights. Mixed unit families are summed by weight,
-      // never by assuming that a millilitre equals a gram.
-      const [unit, amount] =
-        group.measures.size === 1 ? [...group.measures][0] : ['g', group.grams]
-      return {
-        key: group.key,
-        name: group.name,
-        grams: group.grams,
-        amount,
-        unit
-      }
-    })
+    .map((group) => ({
+      ...group,
+      amount: group.grams,
+      unit: 'g'
+    }))
     .sort((a, b) => a.name.localeCompare(b.name, 'nb-NO'))
 }
 
 export function shoppingQuantity(item) {
-  const measure = ingredientMeasure(item)
-  return `${formatAmount(measure.amount, measure.unit === 'dl' ? 4 : 2)} ${measure.unit}`
+  return `${formatAmount(item.grams)} g`
 }
 
 export function shoppingListText(items, checked = [], remainingOnly = true) {

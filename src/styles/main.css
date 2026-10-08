@@ -659,7 +659,7 @@ footer span {
 }
 .editor-ingredient {
   display: grid;
-  grid-template-columns: minmax(140px, 2fr) repeat(3, minmax(75px, 1fr)) 40px;
+  grid-template-columns: minmax(140px, 2fr) minmax(100px, 1fr) 40px;
   gap: 8px;
   align-items: start;
 }
@@ -687,7 +687,7 @@ footer span {
 }
 @media (max-width: 600px) {
   .editor-ingredient {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) 36px;
+    grid-template-columns: minmax(0, 1fr) 36px;
   }
   .editor-ingredient > :first-child {
     grid-column: 1 / -1;

@@ -7,7 +7,6 @@ import {
   shoppingListText,
   replaceWeekEntries
 } from '../shopping'
-import { formatAmount } from '../recipes'
 
 const storageKey = 'matglede-shopping-v1'
 const entries = ref([])
@@ -220,10 +219,7 @@ defineExpose({ addRecipe, updateWeek })
                 color="primary"
               />
               <div class="shopping-amount">
-                <strong>{{ shoppingQuantity(item) }}</strong
-                ><small v-if="item.unit !== 'g'"
-                  >{{ formatAmount(item.grams) }} g</small
-                >
+                <strong>{{ shoppingQuantity(item) }}</strong>
               </div>
             </li>
           </ul>
